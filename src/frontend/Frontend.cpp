@@ -113,8 +113,7 @@ void Frontend::Init(Communicator *c) {
 
   auto end = EndpointFactory::get_endpoint(config_path);
 
-  mpFrontends->find(tid)->second->_communicator =
-      CommunicatorFactory::get_communicator(end);
+  mpFrontends->find(tid)->second->_communicator = CommunicatorFactory::get_communicator(end);
   mpFrontends->find(tid)->second->_communicator->obj_ptr()->Connect();
 
 
@@ -192,8 +191,7 @@ void Frontend::Execute(const char *routine, const Buffer *input_buffer) {
 
     start = steady_clock::now();
     size_t out_buffer_size;
-    frontend->_communicator->obj_ptr()->Read((char *) &out_buffer_size,
-                                             sizeof(size_t));
+    frontend->_communicator->obj_ptr()->Read((char *) &out_buffer_size, sizeof(size_t));
     frontend->mDataReceived += out_buffer_size;
     if (out_buffer_size > 0)
       frontend->mpOutputBuffer->Read<char>(

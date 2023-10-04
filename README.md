@@ -2,7 +2,7 @@
 
 The GPU Virtualization Service (GVirtuS) presented in this work tries to fill the gap between in-house hosted computing clusters, equipped with GPGPUs devices, and pay-for-use high performance virtual clusters deployed via public or private computing clouds. gVirtuS allows an instanced virtual machine to access GPGPUs in a transparent and hypervisor independent way, with an overhead slightly greater than a real machine/GPGPU setup. The performance of the components of gVirtuS is assessed through a suite of tests in different deployment scenarios, such as providing GPGPU power to cloud computing based HPC clusters and sharing remotely hosted GPGPUs among HPC nodes.
 
-    https://link.springer.com/chapter/10.1007/978-3-642-15277-1_37
+**[Click here to read the official GVirtuS paper.](https://link.springer.com/chapter/10.1007/978-3-642-15277-1_37)**
 
 ## How to cite GVirtuS in your scientific papers ##
 
@@ -40,161 +40,209 @@ The GPU Virtualization Service (GVirtuS) presented in this work tries to fill th
 
 * Di Lauro, R., Giannone, F., Ambrosio, L., & Montella, R. (2012, July). Virtualizing general purpose GPUs for high performance cloud computing: an application to a fluid simulator. In 2012 IEEE 10th International Symposium on Parallel and Distributed Processing with Applications (pp. 863-864). IEEE.
 
-# How To install GVirtuS framework and plugins#
+# How To install GVirtuS framework and plugins #
 ## Prerequisites: ##
-GCC, G++ with C++17 extension (minmum version: 7)
 
-OS: CentOS 7.3, Ubuntu 18.04 (tested)
+* **Compilers:** GCC, G++ with C++17 extension (Version 7 or above)
 
-CUDA Toolkit: version 10.2
+* **CMake:** Version 3.17 or above
 
-This package are required:
-    build-essential
-    autotools-dev
-    automake
-    git
-    libtool
-    libxmu-dev
-    libxi-dev
-    libgl-dev
-    libosmesa-dev
-    liblog4cplus-dev
+* **OS:** CentOS 7.3 or Ubuntu 18.04 (note that those are tested OSes, but GVirtuS could be virtually installed anywhere)
+
+* **CUDA Toolkit:** Version 10.2 or above
+
+Furthermore, those packages are required:
+
+```
+build-essential 
+autotools-dev 
+automake 
+git 
+libtool 
+libxmu-dev 
+libxi-dev 
+libgl-dev 
+libosmesa-dev 
+liblog4cplus-dev
+```
+
+The required packages can be installed with the following commands:
 
 Ubuntu:
-    sudo apt-get install build-essential libxmu-dev libxi-dev libgl-dev libosmesa-dev git liblog4cplus-dev
+
+```
+sudo apt-get install build-essential libxmu-dev libxi-dev libgl-dev libosmesa-dev git liblog4cplus-dev
+```
 
 CentOS:
 
-    sudo yum install centos-release-scl
+```
+sudo yum install centos-release-scl
+sudo yum install devtoolset-8-gcc
+scl enable devtoolset-8 bash
+```
 
-    sudo yum install devtoolset-8-gcc
-
-    scl enable devtoolset-8 bash
+Now we can install GVirtuS.
 
 ## Installation: ##
-1) Clone the GVirtuS main repository
 
-   git clone https://github.com/gvirtus/GVirtuS.git 
+1) `git clone` the **GVirtuS** main repository: 
 
-2) Compile and install GVirtuS using CMake:
+```   
+git clone https://github.com/gvirtus/GVirtuS.git 
+```
 
+2) Compile and install **GVirtuS** using `cmake`:
 
-    cd GVirutS
-    mkdir build
-    cd build
-    cmake ..
-    make
-    make install    
-    
+```
+cd GVirutS
+mkdir build
+cd build
+cmake ..
+make
+make install
+```    
 
-By default GVirtuS will be installed in ${HOME}/GVirtuS; to override 
-this behavior export the GVIRTUS_HOME variable before running cmake, i.e.:
+By default **GVirtuS** will be installed in `${HOME}/GVirtuS`. To override this behavior **export the GVIRTUS_HOME variable BEFORE RUNNING CMAKE**, i.e.:
 
+```
+export GVIRTUS_HOME=/Your/GVirtuS/Path 
+```
 
-    export GVIRTUS_HOME=/opt/GVirtuS 
+`GVIRTUS_HOME` should be exported if **GVirtuS** is desired to be installed in a different path.
 
+If everything worked properly, **GVirtuS** is now installed. This step **must** be performed on both the remote and client machines.
 
-
-## Running GVirtuS ##
-
+## Running GVirtuS: ##
 ### Backend machine (physical GPU and Cuda required) ###
 
-On the remote machine where the cuda executables will be executed
+These steps are aimed to the machine where the CUDA executables will be executed. 
 
-Modify the GVirtuS configuration file backend if the default port 9999 is occuped or the machine is remote:
+GVirtuS can be run in both local _(for testing purposes)_ or remote setups.
 
-$GVIRTUS\_HOME/etc/properties.json
+GVirtuS backend configuration file `$GVIRTUS_HOME/etc/properties.json` should be modified if the default port `9999` is occupied or the machine is remote, changing the localhost IP with the IP of the machine:
 
+```
+{
+  "communicator": [
     {
-        "communicator": [
-        {
-             "endpoint": {
-                 "suite": "tcp/ip",
-                 "protocol": "oldtcp",
-                 "server_address": "127.0.0.1",
-                 "port": "9999"
-        },
-        "plugins": [
-            "cudart",
-            "cudadr",
-            "cufft",
-            "cublas",
-            "curand"
-            ]
-        }
-        ],
-        "secure\_application": false
+      "endpoint": {
+        "suite": "tcp/ip",
+        "protocol": "tcp",
+        "server_address": "127.0.0.1",
+        "port": "9999"
+      },
+      "plugins": [
+        "cudart",
+        "cublas",
+        "curand",
+        "cudnn"
+      ]
     }
+  ],
+  "secure_application": false
+}
+```
 
-Execute application server gvirtus-backend with follow command:
+To run `gvirtus-backend` server application, perform the following command:
 
-    LD_LIBRARY_PATH=${GVIRTUS_HOME}/lib:${LD_LIBRARY_PATH} $GVIRTUS_HOME/bin/gvirtus-backend ${GVIRTUS_HOME}/etc/properties.json
+```
+LD_LIBRARY_PATH=${GVIRTUS_HOME}/lib:${LD_LIBRARY_PATH} $GVIRTUS_HOME/bin/gvirtus-backend ${GVIRTUS_HOME}/etc/properties.json
+```
+The terminal should now prompt a similar message:
+
+```
+INFO - ? - GVirtuS backend version
+INFO - ? - Configuration: /home/m.aponte/GVirtuS_fork/etc/properties.json
+INFO - ? - Up and running
+```
+
+If everything of the above worked correctly, `gvirtus-backend` is now running, waiting for requests.
 
 ### Frontend machine (No GPU or Cuda required) ###
 
-Modify the Gvirtus configuration file frontend:
+These steps are aimed to the client machine that cannot perform CUDA operations.
 
-$GVIRTUS\_HOME/etc/properties.json
+GVirtuS frontend configuration file `$GVIRTUS_HOME/etc/properties.json` should be modified if the default port `9999` is occupied or the machine is remote, changing the localhost IP with the IP of the remote machine:
 
+```
+{
+  "communicator": [
     {
-        "communicator": [
-        {
-             "endpoint": {
-                 "suite": "tcp/ip",
-                 "protocol": "oldtcp",
-                 "server_address": "127.0.0.1",
-                 "port": "9999"
-        },
-        "plugins": [
-            "cudart",
-            "cudadr",
-            "cufft",
-            "cublas",
-            "curand"
-            ]
-        }
-        ],
-        "secure\_application": false
+      "endpoint": {
+        "suite": "tcp/ip",
+        "protocol": "tcp",
+        "server_address": "127.0.0.1",
+        "port": "9999"
+      },
+      "plugins": [
+        "cudart",
+        "cublas",
+        "curand",
+        "cudnn"
+      ]
     }
+  ],
+  "secure_application": false
+}
+```
 
+**Note that In the local configuration, GVirtuS Backend and Frontend share the same configuration files.**
 
-**NOTE: In the local configuration GVirtuS Backend and Frontend share the same configuration files.**
+Optionally, a different configuration file could be set:
 
-Export the dynamic GVirtuS library:
+```
+export GVIRTUS_CONFIG=$HOME/dev/properties.json
+```
 
-    export LD_LIBRARY_PATH=${GVIRTUS_HOME}/lib/frontend:${GVIRTUS_HOME}/lib/frontend:${LD_LIBRARY_PATH}
+Now we have to compile our CUDA application.
 
-Optionally set a different configuration file
+**BEFORE COMPILING** a CUDA application, export the **dynamic GVirtuS library** with the following command. **THIS STEP IS FUNDAMENTAL**:
 
-    export GVIRTUS_CONFIG=$HOME/dev/properties.json
+```
+export LD_LIBRARY_PATH=${GVIRTUS_HOME}/lib:${GVIRTUS_HOME}/lib/frontend:${LD_LIBRARY_PATH}
+```
 
-execute the cuda application compiled with cuda dynamic library (with -lcuda -lcudart)
+If `nvcc` is being used, **be sure to compile using shared libraries**:
 
-    ./example
+```
+export EXTRA_NVCCFLAGS="--cudart=shared"
+```
 
-If you are using nvcc be sure you are compiling using shared libraries:
+Now compile the CUDA application. A potential `nvcc` command could be:
+```
+nvcc example.cu -o example --cudart=shared
+```
 
-    export EXTRA_NVCCFLAGS="--cudart=shared"
+Now the cuda application - compiled with cuda dynamic library (with `-lcuda -lcudart`) - can be run:
 
+```
+./example
+```
+
+If `GVIRTUS_LOGLEVEL` environment variable is set on `DEBUG_LOG_LEVEL`, debug logs on terminal are expected. 
 
 ## Logging ##
 
-In order to change the loging level, define the GVIRTUS\_LOGLEVEL environment variable:
+In order to change the logging level, the `GVIRTUS_LOGLEVEL` environment variable should be defined as follows:
 
-    export GVIRTUS_LOGLEVEL=<loglevel>
+```
+export GVIRTUS_LOGLEVEL=<loglevel>
+```
 
-The <loglevel> value is defined as follows:
+The `<loglevel>` value is defined as follows:
+```
+OFF_LOG_LEVEL     = 60000
 
-    OFF_LOG_LEVEL     = 60000
+FATAL_LOG_LEVEL   = 50000
 
-    FATAL_LOG_LEVEL   = 50000
+ERROR_LOG_LEVEL   = 40000
 
-    ERROR_LOG_LEVEL   = 40000
+WARN_LOG_LEVEL    = 30000
 
-    WARN_LOG_LEVEL    = 30000
+INFO_LOG_LEVEL    = 20000
 
-    INFO_LOG_LEVEL    = 20000
+DEBUG_LOG_LEVEL   = 10000
 
-    DEBUG_LOG_LEVEL   = 10000
-
-    TRACE_LOG_LEVEL   = 0
+TRACE_LOG_LEVEL   = 0
+```

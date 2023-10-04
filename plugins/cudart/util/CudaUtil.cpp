@@ -41,13 +41,12 @@
 #include <cuda.h>
 
 #if CUDART_VERSION >= 11000
-struct __align__(8) fatBinaryHeader
-{
-  unsigned int           magic;
-  unsigned short         version;
-  unsigned short         headerSize;
-  unsigned long long int fatSize;
-};
+    struct __align__(8) fatBinaryHeader {
+      unsigned int           magic;
+      unsigned short         version;
+      unsigned short         headerSize;
+      unsigned long long int fatSize;
+    };
 #endif
 
 using namespace std;
@@ -86,8 +85,7 @@ void CudaUtil::MarshalDevicePointer(const void* devPtr, char* marshal) {
 #endif
 }
 
-Buffer* CudaUtil::MarshalFatCudaBinary(__cudaFatCudaBinary* bin,
-                                       Buffer* marshal) {
+Buffer* CudaUtil::MarshalFatCudaBinary(__cudaFatCudaBinary* bin, Buffer* marshal) {
   if (marshal == NULL) marshal = new Buffer();
   size_t size;
   int count;
@@ -108,8 +106,8 @@ Buffer* CudaUtil::MarshalFatCudaBinary(__cudaFatCudaBinary* bin,
   marshal->Add(size);
   marshal->Add(bin->usageMode, size);
 
-  for (count = 0; bin->ptx[count].gpuProfileName != NULL; count++)
-    ;
+  for (count = 0; bin->ptx[count].gpuProfileName != NULL; count++);
+
   marshal->Add(count);
   for (int i = 0; i < count; i++) {
     size = strlen(bin->ptx[i].gpuProfileName) + 1;
@@ -121,8 +119,8 @@ Buffer* CudaUtil::MarshalFatCudaBinary(__cudaFatCudaBinary* bin,
     marshal->Add(bin->ptx[i].ptx, size);
   }
 
-  for (count = 0; bin->cubin[count].gpuProfileName != NULL; count++)
-    ;
+  for (count = 0; bin->cubin[count].gpuProfileName != NULL; count++);
+
   marshal->Add(count);
   for (int i = 0; i < count; i++) {
     size = strlen(bin->cubin[i].gpuProfileName) + 1;
@@ -176,15 +174,14 @@ Buffer* CudaUtil::MarshalFatCudaBinary(__cudaFatCudaBinary* bin,
   return marshal;
 }
 
-Buffer* CudaUtil::MarshalFatCudaBinary(__fatBinC_Wrapper_t* bin,
-                                       Buffer* marshal) {
+Buffer* CudaUtil::MarshalFatCudaBinary(__fatBinC_Wrapper_t* bin, Buffer* marshal) {
   if (marshal == NULL) marshal = new Buffer();
   // size_t size = (unsigned long long*)&(bin->magic) - bin->data;
 
   marshal->Add(bin->magic);
   marshal->Add(bin->version);
 
-  struct fatBinaryHeader* header = (fatBinaryHeader*)bin->data;
+  auto* header = (fatBinaryHeader*) bin->data;
   //    size_t size = (header->fatSize / sizeof(unsigned long long)) + 2;
   //    size_t size = header->fatSize;
   size_t size = header->fatSize + (unsigned long long)header->headerSize;
@@ -197,8 +194,7 @@ Buffer* CudaUtil::MarshalFatCudaBinary(__fatBinC_Wrapper_t* bin,
 }
 
 __fatBinC_Wrapper_t* CudaUtil::UnmarshalFatCudaBinaryV2(Buffer* marshal) {
-  __fatBinC_Wrapper_t* bin =
-      new __fatBinC_Wrapper_t __attribute__((aligned(8)));
+  __fatBinC_Wrapper_t* bin = new __fatBinC_Wrapper_t __attribute__((aligned(8)));
   size_t size;
 
   bin->magic = marshal->Get<int>();

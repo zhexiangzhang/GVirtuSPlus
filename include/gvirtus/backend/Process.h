@@ -28,9 +28,7 @@ class Process : public common::Observable {
   void Start();
 
  private:
-  std::shared_ptr<common::LD_Lib<communicators::Communicator,
-                                 std::shared_ptr<communicators::Endpoint>>>
-      _communicator;
+  std::shared_ptr<common::LD_Lib<communicators::Communicator, std::shared_ptr<communicators::Endpoint>>> _communicator;
   std::vector<std::shared_ptr<common::LD_Lib<Handler>>> _handlers;
 
   std::vector<std::string> mPlugins;

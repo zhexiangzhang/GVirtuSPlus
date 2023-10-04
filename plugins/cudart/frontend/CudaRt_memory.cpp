@@ -126,8 +126,9 @@ extern "C" __host__ cudaError_t CUDARTAPI cudaHostGetFlags(unsigned int *pFlags,
   return cudaSuccess;
 }
 
-extern "C" __host__ cudaError_t CUDARTAPI cudaMalloc(void **devPtr,
-                                                     size_t size) {
+extern "C" __host__ cudaError_t CUDARTAPI cudaMalloc(void **devPtr, size_t size) {
+  printf("cudaMalloc stub called\n");
+
   CudaRtFrontend::Prepare();
   CudaRtFrontend::AddVariableForArguments(size);
   CudaRtFrontend::Execute("cudaMalloc");
