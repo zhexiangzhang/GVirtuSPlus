@@ -21,7 +21,7 @@ using std::chrono::steady_clock;
 
 using namespace std;
 
-Process::Process( std::shared_ptr < LD_Lib < Communicator, std::shared_ptr < Endpoint>>> communicator, vector <string> &plugins): Observable() {
+Process::Process(std::shared_ptr<LD_Lib<Communicator, std::shared_ptr<Endpoint>>> communicator, vector <string> &plugins) : Observable() {
     logger = log4cplus::Logger::getInstance(LOG4CPLUS_TEXT("Process"));
 
     // Set the logging level
@@ -63,38 +63,38 @@ void Process::Start() {
     LOG4CPLUS_DEBUG(logger, "✓ - Process::Start() called by [Process " << getpid() << "].");
 
     for_each(mPlugins.begin(), mPlugins.end(), [this](const std::string &plug) {
-        std::string gvirtus_home = getGVirtuSHome();
+                 std::string gvirtus_home = getGVirtuSHome();
 
-        std::string to_append = "libgvirtus-plugin-" + plug + ".so";
-        LOG4CPLUS_DEBUG(logger, "✓ - [Process " << getpid() << "]: appending " << to_append << ".");
+                 std::string to_append = "libgvirtus-plugin-" + plug + ".so";
+                 LOG4CPLUS_DEBUG(logger, "✓ - [Process " << getpid() << "]: appending " << to_append << ".");
 
-        auto ld_path = fs::path(gvirtus_home + "/lib") .append(to_append);
+                 auto ld_path = fs::path(gvirtus_home + "/lib").append(to_append);
 
-        try {
-            auto dl = std::make_shared <LD_Lib<Handler>>(ld_path, "create_t");
-            dl->build_obj();
-            _handlers.push_back(dl);
-        }
-        catch (const std::string &e) {
-            LOG4CPLUS_ERROR(logger, e);
-        }
-    }
+                 try {
+                     auto dl = std::make_shared<LD_Lib<Handler>>(ld_path, "create_t");
+                     dl->build_obj();
+                     _handlers.push_back(dl);
+                 }
+                 catch (const std::string &e) {
+                     LOG4CPLUS_ERROR(logger, e);
+                 }
+             }
     );
 
     // inserisci i sym dei plugin in h
-    std::function<void(Communicator *)> execute = [=](Communicator * client_comm) {
+    std::function<void(Communicator *)> execute = [=](Communicator *client_comm) {
         LOG4CPLUS_DEBUG(logger, "✓ - Process::Start()'s \"execute\" lambda called by [Process " << getpid() << "].");
         // carica i puntatori ai simboli dei moduli in mHandlers
 
         string routine;
-        std::shared_ptr <Buffer> input_buffer = std::make_shared<Buffer>();
+        std::shared_ptr<Buffer> input_buffer = std::make_shared<Buffer>();
 
         while (getstring(client_comm, routine)) {
             LOG4CPLUS_DEBUG(logger, "✓ - Received routine " << routine);
 
             input_buffer->Reset(client_comm);
 
-            std::shared_ptr <Handler> h = nullptr;
+            std::shared_ptr<Handler> h = nullptr;
             for (auto &ptr_el : _handlers) {
                 if (ptr_el->obj_ptr()->CanExecute(routine)) {
                     h = ptr_el->obj_ptr();
@@ -102,31 +102,22 @@ void Process::Start() {
                 }
             }
 
-            std::shared_ptr <communicators::Result> result;
+            std::shared_ptr<communicators::Result> result;
             if (h == nullptr) {
-                LOG4CPLUS_ERROR(logger, "✖ - [Process "
-                        << getpid()
-                        << "]: Requested unknown routine "
-                        << routine << ".");
-                result = std::make_shared<communicators::Result>(
-                        -1, std::make_shared<Buffer>());
+                LOG4CPLUS_ERROR(logger, "✖ - [Process " << getpid() << "]: Requested unknown routine " << routine << ".");
+                result = std::make_shared<communicators::Result>(-1, std::make_shared<Buffer>());
             } else {
+                // esegue la routine e salva il risultato in result
                 auto start = steady_clock::now();
                 result = h->Execute(routine, input_buffer);
-                result->TimeTaken(std::chrono::duration_cast<std::chrono::milliseconds>(steady_clock::now() - start)
-                                          .count() / 1000.0);
-                // esegue la routine e salva il risultato in result
+                result->TimeTaken(std::chrono::duration_cast<std::chrono::milliseconds>(steady_clock::now() - start).count() / 1000.0);
             }
 
             // scrive il risultato sul communicator
-            //
             result->Dump(client_comm);
             if (result->GetExitCode() != 0 && routine.compare("cudaLaunch")) {
-                LOG4CPLUS_DEBUG(logger, "✓ - [Process " << getpid() << "]: Requested '"
-                                                        << routine << "' routine.");
-                LOG4CPLUS_DEBUG(logger, "✓ - - [Process "
-                        << getpid() << "]: Exit Code '"
-                        << result->GetExitCode() << "'.");
+                LOG4CPLUS_DEBUG(logger, "✓ - [Process " << getpid() << "]: Requested '" << routine << "' routine.");
+                LOG4CPLUS_DEBUG(logger, "✓ - - [Process " << getpid() << "]: Exit Code '" << result->GetExitCode() << "'.");
             }
         }
 
@@ -158,7 +149,7 @@ void Process::Start() {
             }
         }
     }
-    catch (std::string & exc) {
+    catch (std::string &exc) {
         LOG4CPLUS_ERROR(logger, "✖ - [Process " << getpid() << "]: " << exc);
     }
 

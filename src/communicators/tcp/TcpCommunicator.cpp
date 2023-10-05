@@ -70,7 +70,8 @@ TcpCommunicator::TcpCommunicator(const std::string &communicator) {
 
     const char *valueptr = strstr(communicator.c_str(), "://") + 3;
     const char *portptr = strchr(valueptr, ':');
-    if (portptr == NULL) throw "Port not specified.";
+    if (portptr == NULL)
+        throw "Port not specified.";
     mPort = (short) strtol(portptr + 1, NULL, 10);
 
 #ifdef _WIN32
@@ -184,6 +185,7 @@ void TcpCommunicator::Connect() {
 
     if (connect(mSocketFd, (struct sockaddr *) &remote, sizeof(struct sockaddr_in)) != 0)
         throw "TcpCommunicator: Can't connect to socket.";
+
     InitializeStream();
 #ifdef DEBUG
     printf("TcpCommunicator::Connect() returned\n");
