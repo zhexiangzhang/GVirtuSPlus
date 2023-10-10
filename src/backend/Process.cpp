@@ -60,13 +60,13 @@ std::string getGVirtuSHome() {
 }
 
 void Process::Start() {
-    LOG4CPLUS_DEBUG(logger, "✓ - Process::Start() called by [Process " << getpid() << "].");
+    LOG4CPLUS_DEBUG(logger, "✓ - [Process " << getpid() << "] Process::Start() called.");
 
     for_each(mPlugins.begin(), mPlugins.end(), [this](const std::string &plug) {
                  std::string gvirtus_home = getGVirtuSHome();
 
                  std::string to_append = "libgvirtus-plugin-" + plug + ".so";
-                 LOG4CPLUS_DEBUG(logger, "✓ - [Process " << getpid() << "]: appending " << to_append << ".");
+                 LOG4CPLUS_DEBUG(logger, "✓ - [Process " << getpid() << "] appending " << to_append << ".");
 
                  auto ld_path = fs::path(gvirtus_home + "/lib").append(to_append);
 
@@ -83,7 +83,7 @@ void Process::Start() {
 
     // inserisci i sym dei plugin in h
     std::function<void(Communicator *)> execute = [=](Communicator *client_comm) {
-        LOG4CPLUS_DEBUG(logger, "✓ - Process::Start()'s \"execute\" lambda called by [Process " << getpid() << "].");
+        LOG4CPLUS_DEBUG(logger, "✓ - [Process " << getpid() << "]" << "Process::Start()'s \"execute\" lambda called");
         // carica i puntatori ai simboli dei moduli in mHandlers
 
         string routine;
@@ -124,8 +124,10 @@ void Process::Start() {
         Notify("process-ended");
     };
 
+    /*
     common::SignalState sig_hand;
     sig_hand.setup_signal_state(SIGINT);
+*/
 
     try {
         _communicator->obj_ptr()->Serve();
@@ -143,10 +145,13 @@ void Process::Start() {
             } else
                 _communicator->obj_ptr()->run();
 
+            // check if process received SIGINT
+
             if (common::SignalState::get_signal_state(SIGINT)) {
                 LOG4CPLUS_DEBUG(logger, "✓ - SIGINT received, killing server on [Process " << getpid() << "]...");
                 break;
             }
+
         }
     }
     catch (std::string &exc) {
@@ -154,7 +159,7 @@ void Process::Start() {
     }
 
     LOG4CPLUS_DEBUG(logger, "✓ - Process::Start() returned [Process " << getpid() << "].");
-    exit(EXIT_SUCCESS);
+    //exit(EXIT_SUCCESS);
 }
 
 Process::~Process() {

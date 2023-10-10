@@ -5,6 +5,7 @@
 
 #include <sys/wait.h>
 #include <unistd.h>
+#include <cerrno>
 
 using gvirtus::backend::Backend;
 
@@ -48,13 +49,16 @@ void Backend::Start() {
     //   "]: Started."); children->Start(); LOG4CPLUS_DEBUG(logger, "✓ - [Thread "
     //   << std::this_thread::get_id() << "]: Finished.");
     // };
-    LOG4CPLUS_DEBUG(logger, "✓ - Backend::Start() called.");
+    LOG4CPLUS_DEBUG(logger, "✓ - [Process " << getpid() << "] " << "Backend::Start() called.");
 
     int pid = 0;
+
     // _children definition: "std::vector<std::unique_ptr<Process>> _children"
     for (int i = 0; i < _children.size(); i++) {
+        activeChilds++;
         if ((pid = fork()) == 0) {
             _children[i]->Start();
+            LOG4CPLUS_TRACE(logger, "Child exited.");
             break;
         }
     }
@@ -65,24 +69,38 @@ void Backend::Start() {
         signal(SIGINT, SIG_IGN);
         signal(SIGHUP, SIG_IGN);
 
-        while ((pid_wait = wait(&stat_loc)) > 0) {
-            std::stringstream debug_msg;
-            debug_msg << "[Process " << getpid() << "] ";
+        LOG4CPLUS_TRACE(logger, "Active childs: %d" << activeChilds);
 
-            if (WIFEXITED(stat_loc))
-                debug_msg << "terminated normally (WIFEXITED TRUE)";
-            if (WIFSIGNALED(stat_loc))
-                debug_msg << "terminated due to receipt of a signal (WIFSIGNALED TRUE)";
-            if (WIFSTOPPED(stat_loc))
-                debug_msg << "has stopped and can be restarted (WIFSTOPPED TRUE)";
+        int status;
+        do {
+            LOG4CPLUS_DEBUG(logger, "✓ - [Process " << getpid() << "] " << "Waiting for childs to terminate. Current active childs: " << activeChilds);
+            int waitres = wait(&status);
+            activeChilds--;
 
-            LOG4CPLUS_DEBUG(logger, "✓ - " << __LINE__ << ": " << debug_msg.str());
-        }
+            LOG4CPLUS_TRACE(logger, "Active childs: %d" << activeChilds);
+
+            if (waitres < 0) {
+                LOG4CPLUS_TRACE(logger, "Error " << strerror(errno) << " on wait.");
+                //throw "Backend: Error on wait: " + std::string(strerror(errno));
+            }
+            else {
+                LOG4CPLUS_TRACE(logger, "Process " << waitres << " returned successfully.");
+                break;
+            }
+        } while (not WIFEXITED(status) and not WIFSIGNALED(status));
     }
 
-    LOG4CPLUS_DEBUG(logger, "✓ - Backend::Start() returned.");
+    LOG4CPLUS_INFO(logger, "✓ - No child processes are running. Use CTRL + C to terminate the backend.");
+
+    signal(SIGINT, sigint_handler);
+    pause();
+
+    LOG4CPLUS_DEBUG(logger, "✓ - [Process " << getpid() << "] " << "Backend::Start() returned.");
+
 }
 
 void Backend::EventOccurred(std::string &event, void *object) {
     LOG4CPLUS_DEBUG(logger, "✓ - EventOccurred: " << event);
 }
+
+

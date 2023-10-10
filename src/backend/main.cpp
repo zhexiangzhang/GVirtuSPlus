@@ -51,7 +51,7 @@ void loggerConfig() {
 int main(int argc, char **argv) {
     loggerConfig();
 
-    LOG4CPLUS_INFO(logger, "🛈  - GVirtuS backend: \"ktm\" version");
+    LOG4CPLUS_INFO(logger, "🛈  - GVirtuS backend: \"ktm\"  0.0.11 version");
 
     std::string config_path;
 #ifdef _CONFIG_FILE_JSON
@@ -65,7 +65,7 @@ int main(int argc, char **argv) {
     try {
         gvirtus::backend::Backend backend(config_path);
 
-        LOG4CPLUS_INFO(logger, "🛈  - Up and running");
+        LOG4CPLUS_INFO(logger, "🛈  - [Process" << getpid() << "] Up and running!");
         backend.Start();
     }
     catch (std::string & exc) {
