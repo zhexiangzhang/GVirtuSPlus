@@ -135,7 +135,7 @@ void TcpCommunicator::Serve() {
     if (bindResult != 0)
         throw "TcpCommunicator: Can't bind socket: " + std::string(strerror(errno)) + ".";
 
-    int listenResult = listen(mSocketFd, 5)
+    int listenResult = listen(mSocketFd, 5);
     if (listenResult != 0)
         throw "TcpCommunicator: Can't listen from socket: " + std::string(strerror(errno)) + ".";
 
