@@ -176,16 +176,17 @@ void TcpCommunicator::Connect() {
     struct sockaddr_in remote;
 
     if ((mSocketFd = socket(AF_INET, SOCK_STREAM, 0)) == 0)
-        throw "TcpCommunicator: Can't create socket: " + str::string(strerror(errno)) + ".";
+        throw "TcpCommunicator: Can't create socket: " + std::string(strerror(errno)) + ".";
 
     remote.sin_family = AF_INET;
     remote.sin_port = htons(mPort);
     memcpy(&remote.sin_addr, mInAddr, mInAddrSize);
 
     if (connect(mSocketFd, (struct sockaddr *) &remote, sizeof(struct sockaddr_in)) != 0)
-        throw "TcpCommunicator: Can't connect to socket: " + str::string(strerror(errno)) + ".";
+        throw "TcpCommunicator: Can't connect to socket: " + std::string(strerror(errno)) + ".";
 
     InitializeStream();
+
 #ifdef DEBUG
     printf("TcpCommunicator::Connect() returned\n");
 #endif
@@ -249,6 +250,7 @@ void TcpCommunicator::InitializeStream() {
     mpInputBuf = new __gnu_cxx::stdio_filebuf<char>(mSocketFd, ios_base::in);
     mpOutputBuf = new __gnu_cxx::stdio_filebuf<char>(mSocketFd, ios_base::out);
 #endif
+
     mpInput = new istream(mpInputBuf);
     mpOutput = new ostream(mpOutputBuf);
 }
