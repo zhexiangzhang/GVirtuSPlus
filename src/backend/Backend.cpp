@@ -69,7 +69,7 @@ void Backend::Start() {
         signal(SIGINT, SIG_IGN);
         signal(SIGHUP, SIG_IGN);
 
-        LOG4CPLUS_TRACE(logger, "Active childs: %d" << activeChilds);
+        LOG4CPLUS_TRACE(logger, "Active childs: " << activeChilds);
 
         int status;
         do {
