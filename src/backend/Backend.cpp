@@ -63,6 +63,7 @@ void Backend::Start() {
         }
     }
 
+    /* PARENT */
     pid_t pid_wait = 0;
     int stat_loc;
     if (pid != 0) {
@@ -81,22 +82,20 @@ void Backend::Start() {
 
             if (waitres < 0) {
                 LOG4CPLUS_TRACE(logger, "Error " << strerror(errno) << " on wait.");
-                //throw "Backend: Error on wait: " + std::string(strerror(errno));
             }
             else {
                 LOG4CPLUS_TRACE(logger, "Process " << waitres << " returned successfully.");
                 break;
             }
         } while (not WIFEXITED(status) and not WIFSIGNALED(status));
+
+        LOG4CPLUS_INFO(logger, "✓ - No child processes are currently running. Use CTRL + C to terminate the backend.");
+
+        signal(SIGINT, sigint_handler);
+        pause();
     }
 
-    LOG4CPLUS_INFO(logger, "✓ - No child processes are running. Use CTRL + C to terminate the backend.");
-
-    signal(SIGINT, sigint_handler);
-    pause();
-
     LOG4CPLUS_DEBUG(logger, "✓ - [Process " << getpid() << "] " << "Backend::Start() returned.");
-
 }
 
 void Backend::EventOccurred(std::string &event, void *object) {

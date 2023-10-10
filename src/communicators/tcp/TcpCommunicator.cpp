@@ -120,7 +120,7 @@ void TcpCommunicator::Serve() {
     struct sockaddr_in socket_addr;
 
     if ((mSocketFd = socket(AF_INET, SOCK_STREAM, 0)) == 0)
-        throw "**TcpCommunicator: Can't create socket.";
+        throw "TcpCommunicator: Can't create socket: " + std::string(strerror(errno)) + ".";
 
     memset((char *) &socket_addr, 0, sizeof(struct sockaddr_in));
 
@@ -131,14 +131,14 @@ void TcpCommunicator::Serve() {
     char on = 1;
     setsockopt(mSocketFd, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(on));
 
-    int result = bind(mSocketFd, (struct sockaddr *) &socket_addr, sizeof(struct sockaddr_in));
-    if (result != 0) {
-        std::string error = strerror(errno);
-        throw "TcpCommunicator: Can't bind socket: " + error;
-    }
+    int bindResult = bind(mSocketFd, (struct sockaddr *) &socket_addr, sizeof(struct sockaddr_in));
+    if (bindResult != 0)
+        throw "TcpCommunicator: Can't bind socket: " + std::string(strerror(errno)) + ".";
 
-    if (listen(mSocketFd, 5) != 0)
-        throw "AfUnixCommunicator: Can't listen from socket.";
+    int listenResult = listen(mSocketFd, 5)
+    if (listenResult != 0)
+        throw "TcpCommunicator: Can't listen from socket: " + std::string(strerror(errno)) + ".";
+
 #ifdef DEBUG
     printf("TcpCommunicator::Serve() returned\n");
 #endif
@@ -175,16 +175,15 @@ void TcpCommunicator::Connect() {
 
     struct sockaddr_in remote;
 
-
     if ((mSocketFd = socket(AF_INET, SOCK_STREAM, 0)) == 0)
-        throw "TcpCommunicator: Can't create socket.";
+        throw "TcpCommunicator: Can't create socket: " + str::string(strerror(errno)) + ".";
 
     remote.sin_family = AF_INET;
     remote.sin_port = htons(mPort);
     memcpy(&remote.sin_addr, mInAddr, mInAddrSize);
 
     if (connect(mSocketFd, (struct sockaddr *) &remote, sizeof(struct sockaddr_in)) != 0)
-        throw "TcpCommunicator: Can't connect to socket.";
+        throw "TcpCommunicator: Can't connect to socket: " + str::string(strerror(errno)) + ".";
 
     InitializeStream();
 #ifdef DEBUG
