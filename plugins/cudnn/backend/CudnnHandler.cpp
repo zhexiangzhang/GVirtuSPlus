@@ -32,6 +32,7 @@
 using namespace std;
 using namespace log4cplus;
 
+
 std::map<string, CudnnHandler::CudnnRoutineHandler> * CudnnHandler::mspHandlers = NULL;
 
 extern "C" std::shared_ptr<CudnnHandler> create_t() {
