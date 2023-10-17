@@ -108,16 +108,24 @@ void Frontend::Init(Communicator *c) {
 
     LOG4CPLUS_INFO(logger, "🛈  - GVirtuS frontend version " + config_path);
 
-    auto endpoint = EndpointFactory::get_endpoint(config_path);
+    try {
+        auto endpoint = EndpointFactory::get_endpoint(config_path);
 
-    mpFrontends->find(tid)->second->_communicator = CommunicatorFactory::get_communicator(endpoint);
-    mpFrontends->find(tid)->second->_communicator->obj_ptr()->Connect();
+        mpFrontends->find(tid)->second->_communicator = CommunicatorFactory::get_communicator(endpoint);
+        mpFrontends->find(tid)->second->_communicator->obj_ptr()->Connect();
+    }
+    catch (const string & ex) {
+        LOG4CPLUS_ERROR(logger, "✖ - " << fs::path(__FILE__).filename() << ":" << __LINE__ << ":" << " Exception occurred: " << ex);
+        exit(EXIT_FAILURE);
+    }
+
 
     mpFrontends->find(tid)->second->mpInputBuffer = std::make_shared<Buffer>();
     mpFrontends->find(tid)->second->mpOutputBuffer = std::make_shared<Buffer>();
     mpFrontends->find(tid)->second->mpLaunchBuffer = std::make_shared<Buffer>();
     mpFrontends->find(tid)->second->mExitCode = -1;
     mpFrontends->find(tid)->second->mpInitialized = true;
+
 }
 
 Frontend::~Frontend() {
