@@ -197,12 +197,6 @@ export GVIRTUS_CONFIG=$HOME/dev/properties.json
 
 Now we have to compile our CUDA application.
 
-**BEFORE COMPILING** a CUDA application, export the **dynamic GVirtuS library** with the following command. **THIS STEP IS FUNDAMENTAL**:
-
-```
-export LD_LIBRARY_PATH=${GVIRTUS_HOME}/lib:${GVIRTUS_HOME}/lib/frontend:${LD_LIBRARY_PATH}
-```
-
 If `nvcc` is being used, **be sure to compile using shared libraries**:
 
 ```
@@ -214,13 +208,21 @@ Now compile the CUDA application. A potential `nvcc` command could be:
 nvcc example.cu -o example --cudart=shared
 ```
 
-Now the cuda application - compiled with cuda dynamic library (with `-lcuda -lcudart`) - can be run:
+In order to tell your applications to use GVirtuS libraries, export the **dynamic GVirtuS library** with the following command. **THIS STEP IS FUNDAMENTAL**:
+
+```
+export LD_LIBRARY_PATH=${GVIRTUS_HOME}/lib:${GVIRTUS_HOME}/lib/frontend:${LD_LIBRARY_PATH}
+```
+
+`ldd`command could be useful to check whether the CUDA application is using GVirtuS libraries.
+
+If everything is correctly set up, the cuda application can be eventually run through GVirtuS, in a transparent fashion:
 
 ```
 ./example
 ```
 
-If `GVIRTUS_LOGLEVEL` environment variable is set on `DEBUG_LOG_LEVEL`, debug logs on terminal are expected. 
+If `GVIRTUS_LOGLEVEL` environment variable is set on `DEBUG_LOG_LEVEL`, debug logs on terminal are expected on both backend and frontend applications. 
 
 ## Logging ##
 
