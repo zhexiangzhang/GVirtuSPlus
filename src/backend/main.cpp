@@ -52,7 +52,7 @@ void loggerConfig() {
 int main(int argc, char **argv) {
     loggerConfig();
 
-    LOG4CPLUS_INFO(logger, "🛈  - GVirtuS backend: \"ktm\"  0.0.11 version");
+    LOG4CPLUS_INFO(logger, "🛈  - GVirtuS backend");
 
     std::string config_path;
 #ifdef _CONFIG_FILE_JSON
