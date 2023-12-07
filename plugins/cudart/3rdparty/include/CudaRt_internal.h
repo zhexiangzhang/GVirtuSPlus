@@ -59,6 +59,7 @@
 #define EIATTR_CUDA_API_VERSION 0x37
 
 #include <elf.h>
+#include <driver_types.h>
 
 typedef struct {
     uint8_t dummy1[5*16];
@@ -89,6 +90,13 @@ typedef struct __infoFunction {
 } NvInfoFunction;
 
 
+
+typedef struct __infoFunctionEx {
+    NvInfoFunction infoFunction;
+    cudaStream_t stream;
+    bool adHocStream;
+    void **args;
+} NvInfoFunctionEx;
 
 
 

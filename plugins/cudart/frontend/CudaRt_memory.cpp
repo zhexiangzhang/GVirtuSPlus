@@ -26,6 +26,7 @@
 #include <string.h>
 #include <algorithm>
 #include <cstdio>
+#include <log4cplus/tchar.h>
 #include "CudaRt.h"
 
 #ifndef CUDART_VERSION
@@ -37,19 +38,28 @@ using gvirtus::common::mappedPointer;
 using gvirtus::common::pointer_t;
 
 extern "C" __host__ cudaError_t CUDARTAPI cudaFree(void *devPtr) {
-  void *p = devPtr;
+
+    //printf("cudaFree: 0x%x\n", devPtr);
+
 
   if (CudaRtFrontend::isMappedMemory(devPtr)) {
+      void *hostPointer = devPtr;
+      //printf("cudaFree: 0x%x is a mapped pointer!\n", hostPointer);
+
 #ifdef DEBUG
     cerr << "Mapped pointer detected" << endl;
 #endif
-    mappedPointer a = CudaRtFrontend::getMappedPointer(devPtr);
-    p = a.pointer;
-    free(devPtr);
+
+    mappedPointer remotePointer = CudaRtFrontend::getMappedPointer(devPtr);
+
+    //printf("cudaFree: 0x%x -> 0x%x!\n",devPtr,remotePointer.pointer);
+
+    free (devPtr);
+    devPtr=remotePointer.pointer;
   }
 
   CudaRtFrontend::Prepare();
-  CudaRtFrontend::AddDevicePointerForArguments(p);
+  CudaRtFrontend::AddDevicePointerForArguments(devPtr);
   CudaRtFrontend::Execute("cudaFree");
   return CudaRtFrontend::GetExitCode();
 }
@@ -277,35 +287,75 @@ cudaMemcpyPeerAsync(void *dst, int dstDevice, const void *src, int srcDevice,
   return CudaRtFrontend::GetExitCode();
 }
 
+
+
 extern "C" __host__ CUDARTAPI cudaError_t cudaMallocManaged(void **devPtr,
                                                             size_t size,
                                                             unsigned flags) {
-    printf("-cudaMallocManaged:\n");
-  CudaRtFrontend::Prepare();
-  CudaRtFrontend::AddVariableForArguments(size);
-  CudaRtFrontend::Execute("cudaMalloc");
 
-  if (CudaRtFrontend::Success()) {
-      printf("cudaMallocManaged-\n");
+    //printf("MallocManaged: devPtr:%x size: %ld flags:%d\n",devPtr,size,flags);
+    *devPtr = malloc(size);
 
-      void *hp = CudaRtFrontend::GetOutputDevicePointer();
+    CudaRtFrontend::Prepare();
+    CudaRtFrontend::AddHostPointerForArguments(devPtr);
+    CudaRtFrontend::AddVariableForArguments(size);
+    CudaRtFrontend::AddVariableForArguments(flags);
+    CudaRtFrontend::Execute("cudaMallocManaged");
 
-      *devPtr = malloc(size);
+    if (CudaRtFrontend::Success()) {
 
-      mappedPointer host;
-      host.pointer = hp;
-      host.size = size;
+
+        void *remotePointer = CudaRtFrontend::GetOutputDevicePointer();
+        //printf("MallocManaged: remotePointer: 0x%x\n",remotePointer);
+
+        mappedPointer host;
+        host.pointer = remotePointer;
+        host.size = size;
 
 #ifdef DEBUG
-      cerr << "device: " << std::hex << hp << " host: " << *devPtr << endl;
+        cerr << "device: " << std::hex << hp << " host: " << *devPtr << endl;
 #endif
+        //printf("MallocManaged: *devPtr: 0x%x (local) -> hostPointer: 0x%x size: %ld flags:%d\n",devPtr, host.pointer,size);
+        CudaRtFrontend::addMappedPointer(*devPtr, host);
+    } else {
+        free(*devPtr);
+    }
 
-      CudaRtFrontend::addMappedPointer(*devPtr, host);
+    return CudaRtFrontend::GetExitCode();
+}
+
+/*
+
+extern "C" __host__ CUDARTAPI cudaError_t cudaMallocManaged(void **devPtr,
+                                                            size_t size,
+                                                            unsigned flags) {
+
+    printf("MallocManaged: devPtr:%x size: %ld flags:%d\n",devPtr,size,flags);
+
+    CudaRtFrontend::Prepare();
+    CudaRtFrontend::AddVariableForArguments(size);
+    CudaRtFrontend::Execute("cudaMalloc");
+
+    if (CudaRtFrontend::Success()) {
+
+        void *devicePointer = CudaRtFrontend::GetOutputDevicePointer();
+
+        *devPtr = malloc(size);
+
+        mappedPointer device;
+        device.pointer = devicePointer;
+        device.size = size;
+
+#ifdef DEBUG
+        cerr << "device: " << std::hex << hp << " host: " << *devPtr << endl;
+#endif
+        printf("MallocManaged: 0x%x (host) -> 0x%x (device)\n",*devPtr,device.pointer);
+        CudaRtFrontend::addMappedPointer(*devPtr, device);
   }
-
 
   return CudaRtFrontend::GetExitCode();
 }
+*/
 
 extern "C" __host__ cudaError_t CUDARTAPI
 cudaMemcpy3D(const cudaMemcpy3DParms *p) {

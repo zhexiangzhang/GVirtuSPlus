@@ -89,15 +89,29 @@ CUDA_ROUTINE_HANDLER(FuncSetCacheConfig) {
   }
 }
 
+void CUDART_CB  manageMemoryStreamCallback(cudaStream_t stream, cudaError_t status, void *data)
+{
+    printf("manageMemoryStreamCallback\n");
+    NvInfoFunctionEx *infoFunctionEx = (NvInfoFunctionEx *)data;
 
+    if (infoFunctionEx->adHocStream) {
+        cudaStreamDestroy(infoFunctionEx->stream);
+    }
+}
 
 CUDA_ROUTINE_HANDLER(LaunchKernel) {
     Logger logger = Logger::getInstance(LOG4CPLUS_TEXT("LaunchKernel"));
-    //LOG4CPLUS_DEBUG(logger, "Entering in LaunchKernel");
+    LOG4CPLUS_DEBUG(logger, "LaunchKernel");
 
     void *func = input_buffer->GetFromMarshal<void *>();
+    dim3 gridDim = input_buffer->Get<dim3>();
+    dim3 blockDim = input_buffer->Get<dim3>();
+    size_t sharedMem = input_buffer->Get<size_t>();
+    cudaStream_t stream = input_buffer->Get<cudaStream_t>();
+
 
     std::string deviceFunc=pThis->getDeviceFunc(const_cast<void *>(func));
+
     NvInfoFunction infoFunction = pThis->getInfoFunc(deviceFunc);
 
     //printf("cudaLaunchKernel - hostFunc:%x deviceFunc:%s parameters:%d\n",func, deviceFunc.c_str(),infoFunction.params.size());
@@ -109,8 +123,7 @@ CUDA_ROUTINE_HANDLER(LaunchKernel) {
         argsSize = argsSize + ((infoKParam.size & 0xf8) >> 2);
     }
 
-    dim3 gridDim = input_buffer->Get<dim3>();
-    dim3 blockDim = input_buffer->Get<dim3>();
+
 
     byte *pArgs = input_buffer->AssignAll<byte>();
     //CudaRtHandler::hexdump(pArgs,argsSize);
@@ -124,21 +137,36 @@ CUDA_ROUTINE_HANDLER(LaunchKernel) {
         args[infoKParam.ordinal]=reinterpret_cast<void *>((byte *)pArgs+infoKParam.offset);
     }
 
-    /*
+/*
     for (int i=0;i<infoFunction.params.size();i++) {
-        printf("%d: %x -> %x\n",i,args[i],*(reinterpret_cast<unsigned int *>(args[i])));
+        printf("%d: %x -> %llx\n",i,args[i],*(reinterpret_cast<unsigned long long *>(args[i])));
+        // if (
     }
-    */
+*/
 
-    size_t sharedMem = input_buffer->Get<size_t>();
-    cudaStream_t stream = input_buffer->Get<cudaStream_t>();
+    NvInfoFunctionEx nvInfoFunctionEx;
+    nvInfoFunctionEx.infoFunction = infoFunction;
+    nvInfoFunctionEx.adHocStream = false;
+    nvInfoFunctionEx.args = args;
+
+    if (stream==0) {
+        cudaStreamCreate(&stream);
+        nvInfoFunctionEx.adHocStream = true;
+    }
+
+    nvInfoFunctionEx.stream = stream;
 
     cudaError_t exit_code = cudaLaunchKernel(func,gridDim,blockDim,args,sharedMem,stream);
-
+    if (exit_code == cudaSuccess) {
+        printf("Launched OK!\n");
+        cudaStreamAddCallback(stream, manageMemoryStreamCallback, &nvInfoFunctionEx, 0);
+    }
     //LOG4CPLUS_DEBUG(logger, "LaunchKernel: post");
 
   return std::make_shared<Result>(exit_code);
 }
+
+
 
 CUDA_ROUTINE_HANDLER(Launch) {
   int ctrl;

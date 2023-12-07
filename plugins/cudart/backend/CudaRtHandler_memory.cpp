@@ -35,7 +35,7 @@ using namespace std;
 
 CUDA_ROUTINE_HANDLER(Free) {
   void *devPtr = input_buffer->GetFromMarshal<void *>();
-
+    //printf("cudaFree: 0x%x\n",devPtr);
   cudaError_t exit_code = cudaFree(devPtr);
 
   return std::make_shared<Result>(exit_code);
@@ -99,28 +99,42 @@ CUDA_ROUTINE_HANDLER(MemcpyPeerAsync) {
   }
 }
 
+
 CUDA_ROUTINE_HANDLER(MallocManaged) {
-  void *devPtr = NULL;
-  try {
-      printf("-cudaMallocManaged:\n");
-    devPtr = input_buffer->Get<void *>();
-    size_t size = input_buffer->Get<size_t>();
-    unsigned flags = input_buffer->Get<unsigned>();
-    cudaError_t exit_code = cudaMallocManaged(&devPtr, size, flags);
+    Logger logger = Logger::getInstance(LOG4CPLUS_TEXT("GVirtuS"));
+    CudaRtHandler::setLogLevel(&logger);
+
+    LOG4CPLUS_DEBUG(logger, "MallocManaged");
+
+    try {
+        void *hostPtr = input_buffer->Get<void *>();
+        size_t size = input_buffer->Get<size_t>();
+        unsigned flags = input_buffer->Get<unsigned>();
+        void *devPtr;
+
+
+        //printf("devPtr:%x size: %ld flags:%d\n",devPtr,size,flags);
+        cudaError_t exit_code = cudaMallocManaged(&devPtr, size, flags);
 #ifdef DEBUG
     std::cout << "Allocated DevicePointer " << devPtr << " with a size of "
               << size << std::endl;
 #endif
-    std::shared_ptr<Buffer> out = std::make_shared<Buffer>();
+        std::shared_ptr<Buffer> out = std::make_shared<Buffer>();
 
-    out->AddMarshal(devPtr);
-      printf("cudaMallocManaged-\n");
-    return std::make_shared<Result>(exit_code, out);
-  } catch (string e) {
-    cerr << e << endl;
-    return std::make_shared<Result>(cudaErrorMemoryAllocation);
-  }
+        gvirtus::common::mappedPointer host;
+        host.pointer = hostPtr;
+        host.size = size;
+
+        out->AddMarshal(devPtr);
+        //printf("cudaMallocManaged: cudaError: %d devPtr: 0x%x size: %ld\n", exit_code, devPtr, size);
+        return std::make_shared<Result>(exit_code, out);
+      } catch (string e) {
+        LOG4CPLUS_DEBUG(logger, e);
+
+        return std::make_shared<Result>(cudaErrorMemoryAllocation);
+      }
 }
+
 
 CUDA_ROUTINE_HANDLER(Malloc3DArray) {
   cudaArray *array = NULL;

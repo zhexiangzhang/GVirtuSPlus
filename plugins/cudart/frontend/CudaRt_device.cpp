@@ -127,8 +127,10 @@ extern "C" __host__ cudaError_t CUDARTAPI cudaDeviceReset(void) {
 }
 
 extern "C" __host__ cudaError_t CUDARTAPI cudaDeviceSynchronize(void) {
-  CudaRtFrontend::Prepare();
-  CudaRtFrontend::Execute("cudaDeviceSynchronize");
+    CudaRtFrontend::Prepare();
+    //printf("Execute cudaDeviceSynchronize...\n");
+    CudaRtFrontend::Execute("cudaDeviceSynchronize");
+    //printf("...done!\n");
   return CudaRtFrontend::GetExitCode();
 }
 

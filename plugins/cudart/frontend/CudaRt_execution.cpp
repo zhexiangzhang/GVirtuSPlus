@@ -149,60 +149,127 @@ extern "C" __host__ cudaError_t CUDARTAPI cudaSetupArgument(const void *arg,
 
 #if CUDA_VERSION >= 9000
 
-extern "C" __host__ cudaError_t cudaLaunchKernel ( const void* func, dim3 gridDim, dim3 blockDim, void** args, size_t sharedMem, cudaStream_t stream ) {
+extern "C" __host__ cudaError_t cudaLaunchKernel ( const void* func,
+                                                   dim3 gridDim, dim3 blockDim,
+                                                   void** args,
+                                                   size_t sharedMem, cudaStream_t stream ) {
+    cudaError_t cudaError = cudaSuccess;
+
+    // A vector with the mapped pointers to be marshalled and unmarshalled
+    vector<gvirtus::common::mappedPointer> mappedPointers;
 
     CudaRtFrontend::Prepare();
     CudaRtFrontend::AddDevicePointerForArguments(func);
     CudaRtFrontend::AddVariableForArguments(gridDim);
     CudaRtFrontend::AddVariableForArguments(blockDim);
-
-    std::string deviceFunc=CudaRtFrontend::getDeviceFunc(const_cast<void *>(func));
-    NvInfoFunction infoFunction = CudaRtFrontend::getInfoFunc(deviceFunc);
-
-    //printf("cudaLaunchKernel - hostFunc:%x deviceFunc:%s parameters:%d\n",func, deviceFunc.c_str(),infoFunction.params.size());
-
-
-    size_t argsSize=0;
-    for (NvInfoKParam infoKParam:infoFunction.params) {
-        //printf("index: %d align%x ordinal:%d offset:%d a:%x size:%d %d b:%x\n",  infoKParam.index, infoKParam.index, infoKParam.ordinal,
-        //       infoKParam.offset, infoKParam.a, (infoKParam.size & 0xf8) >> 2, infoKParam.size & 0x07, infoKParam.b);
-        argsSize = argsSize + ((infoKParam.size & 0xf8) >> 2);
-    }
-
-    //printf("argsSize:%d\n",argsSize);
-    byte *pArgs = static_cast<byte *>(malloc(argsSize));
-
-    void *args1[infoFunction.params.size()];
-
-    for (NvInfoKParam infoKParam:infoFunction.params) {
-        byte *p=pArgs+infoKParam.offset;
-        //printf("%x <-- %d: %x -> %x\n",p,infoKParam.ordinal,args[infoKParam.ordinal],*(reinterpret_cast<unsigned int *>(args[infoKParam.ordinal])));
-
-
-        memcpy(p,args[infoKParam.ordinal],((infoKParam.size & 0xf8) >> 2));
-
-        args1[infoKParam.ordinal]=reinterpret_cast<void *>(p);
-
-
-
-    }
-
-    /*
-    for(int i=0;i<infoFunction.params.size();i++) {
-        printf("%d: %x -> %x\n",i,args1[i],*(reinterpret_cast<unsigned int *>(args1[i])));
-    }
-     */
-    //CudaRtFrontend::hexdump(pArgs,argsSize);
-    CudaRtFrontend::AddHostPointerForArguments<byte>(pArgs, argsSize);
-
     CudaRtFrontend::AddVariableForArguments(sharedMem);
+
 #if CUDART_VERSION >= 3010
     CudaRtFrontend::AddDevicePointerForArguments(stream);
 #else
     CudaRtFrontend::AddVariableForArguments(stream);
 #endif
-    CudaRtFrontend::Execute("cudaLaunchKernel");
-    free(pArgs);
-    return CudaRtFrontend::GetExitCode();
+
+    std::string deviceFunc=CudaRtFrontend::getDeviceFunc(const_cast<void *>(func));
+    NvInfoFunction infoFunction = CudaRtFrontend::getInfoFunc(deviceFunc);
+
+    size_t argsPayloadSize=0;
+    for (NvInfoKParam infoKParam:infoFunction.params) {
+        //printf("index: %d align%x ordinal:%d offset:%d a:%x size:%d %d b:%x\n",  infoKParam.index, infoKParam.index, infoKParam.ordinal,
+        //       infoKParam.offset, infoKParam.a, (infoKParam.size & 0xf8) >> 2, infoKParam.size & 0x07, infoKParam.b);
+        argsPayloadSize = argsPayloadSize + ((infoKParam.size & 0xf8) >> 2);
+    }
+
+    //printf("argsSize:%d\n",argsSize);
+    byte *pArgsPayload = static_cast<byte *>(malloc(argsPayloadSize));
+    memset(pArgsPayload,0x00,argsPayloadSize);
+
+    //void *argsToMarshall[infoFunction.params.size()];
+
+    for (NvInfoKParam infoKParam:infoFunction.params) {
+        byte *p=pArgsPayload+infoKParam.offset;
+        //printf("%d: %x <--  %x -> %x\n",infoKParam.ordinal, p,args[infoKParam.ordinal],*(reinterpret_cast<unsigned int *>(args[infoKParam.ordinal])));
+
+
+        memcpy(p,args[infoKParam.ordinal],((infoKParam.size & 0xf8) >> 2));
+
+        /*
+        if (CudaRtFrontend::isMappedMemory(*(void **)(args[infoKParam.ordinal]))) {
+
+            void *hostPointer = *(void **)(args[infoKParam.ordinal]);
+
+            //printf("cudaLaunchKernel: 0x%x is a mapped pointer!\n",hostPointer);
+            gvirtus::common::mappedPointer mappedPointer = CudaRtFrontend::getMappedPointer(hostPointer);
+            memcpy(p,&(mappedPointer.pointer),((infoKParam.size & 0xf8) >> 2));
+
+            gvirtus::common::mappedPointer localPointer;
+            localPointer.size = mappedPointer.size;
+            localPointer.pointer = hostPointer;
+            mappedPointers.push_back(localPointer);
+        }
+         */
+
+    }
+/*
+    printf("-------------------\n");
+    for(int i=0;i<infoFunction.params.size();i++) {
+        //printf("%d: %x -> %x\n",i,args1[i],*(reinterpret_cast<unsigned int *>(args1[i])));
+        printf("%d: %x\n",i,argsToMarshall[i]);
+    }
+    printf("-------------------\n");
+*/
+    //CudaRtFrontend::hexdump(pArgsPayload,argsPayloadSize);
+
+
+    //printf("cudaLaunchKernel - hostFunc:%x deviceFunc:%s parameters:%d\n",func, deviceFunc.c_str(),infoFunction.params.size());
+
+    CudaRtFrontend::AddHostPointerForArguments<byte>(pArgsPayload, argsPayloadSize);
+
+    /*
+    for (gvirtus::common::mappedPointer mappedPointer:mappedPointers) {
+        //printf("cudaLaunchKernel: marshall 0x%x size: %ld\n",mappedPointer.pointer,mappedPointer.size);
+        CudaRtFrontend::AddHostPointerForArguments<byte>((byte *)mappedPointer.pointer, mappedPointer.size);
+    }
+     */
+
+    //printf("Execute...\n");
+    //CudaRtFrontend::Execute("cudaLaunchKernel");
+    cudaError = CudaRtFrontend::GetExitCode();
+    //printf("...done!\n");
+    if (cudaError == cudaSuccess) {
+        printf("...cudaSuccess!\n");
+        /*
+        bool synchronized = false;
+        for (int idx = 0; idx < infoFunction.params.size(); idx++) {
+            if (CudaRtFrontend::isMappedMemory(*(void **) (args[idx]))) {
+
+                void *hostPointer = *(void **) (args[idx]);
+
+                //printf("cudaLaunchKernel: 0x%x is a mapped pointer!\n", hostPointer);
+
+                gvirtus::common::mappedPointer mappedPointer = CudaRtFrontend::getMappedPointer(hostPointer);
+
+                if (!synchronized) {
+                    //printf("Synchronize\n");
+                    cudaError = cudaDeviceSynchronize();
+                    if (cudaError != cudaSuccess) {
+                        cout << "cudaError:" << cudaError << endl;
+                        break;
+                    }
+                    synchronized = true;
+                }
+                //printf("cudaLaunchKernel: cudaMemcpyAsync 0x%x (device) -> 0x%x (host) size:%ld\n",
+                //       mappedPointer.pointer, hostPointer, mappedPointer.size);
+                cudaError = cudaMemcpy(hostPointer, mappedPointer.pointer, mappedPointer.size,cudaMemcpyDeviceToHost);
+                if (cudaError != cudaSuccess) {
+                    break;
+                }
+
+            }
+        }
+         */
+    }
+    free(pArgsPayload);
+    return cudaError;
 }
 #endif

@@ -15,12 +15,13 @@
  * nodes.
  */
 
-#include <stdlib.h> /* getenv */
+#include <cstdlib> /* getenv */
 #include <unistd.h>
 #include <algorithm>
 #include <iostream>
 #include <memory>
 #include <string>
+
 #include "gvirtus/backend/Backend.h"
 #include "gvirtus/backend/Property.h"
 
@@ -30,50 +31,51 @@
 
 log4cplus::Logger logger;
 
-std::string getEnvVar(std::string const &key) {
-  char *val = getenv(key.c_str());
-  return val == NULL ? std::string("") : std::string(val);
+std::string getEnvVar(std::string const & key) {
+    char * env_var = getenv(key.c_str());
+    return (env_var == nullptr) ? std::string("") : std::string(env_var);
+}
+
+void loggerConfig() {
+    // Logger configuration
+    log4cplus::BasicConfigurator basicConfigurator;
+    basicConfigurator.configure();
+    logger = log4cplus::Logger::getInstance(LOG4CPLUS_TEXT("GVirtuS"));
+
+    // Set the logging level
+    std::string logLevelString = getEnvVar("GVIRTUS_LOGLEVEL");
+    log4cplus::LogLevel logLevel = logLevelString.empty() ? log4cplus::INFO_LOG_LEVEL : std::stoi(logLevelString);
+
+    logger.setLogLevel(logLevel);
 }
 
 int main(int argc, char **argv) {
-  // Logger configuration
-  log4cplus::BasicConfigurator config;
-  config.configure();
-  logger = log4cplus::Logger::getInstance(LOG4CPLUS_TEXT("GVirtuS"));
+    loggerConfig();
 
-  // Set the logging level
-  log4cplus::LogLevel logLevel = log4cplus::INFO_LOG_LEVEL;
-  std::string logLevelString = getEnvVar("GVIRTUS_LOGLEVEL");
-  if (logLevelString != "") {
-    logLevel = std::stoi(logLevelString);
-  }
-  logger.setLogLevel(logLevel);
+    LOG4CPLUS_INFO(logger, "🛈  - GVirtuS backend");
 
-  LOG4CPLUS_INFO(logger, "🛈  - GVirtuS backend version");
-
-  std::string config_path;
+    std::string config_path;
 #ifdef _CONFIG_FILE_JSON
-  config_path = _CONFIG_FILE_JSON;
+    config_path = _CONFIG_FILE_JSON;
 #endif
-  if (argc == 2) {
-    config_path = std::string(argv[1]);
-  }
+    config_path = (argc == 2) ? std::string(argv[1]) : std::string("");
 
-  LOG4CPLUS_INFO(logger, "🛈  - Configuration: " << config_path);
+    LOG4CPLUS_INFO(logger, "🛈  - Configuration: " << config_path);
 
-  // FIXME: Try - Catch? No.
-  try {
-    gvirtus::backend::Backend b(config_path);
+    // FIXME: Try - Catch? No.
+    try {
+        gvirtus::backend::Backend backend(config_path);
 
-    LOG4CPLUS_INFO(logger, "🛈  - Up and running");
-    b.Start();
+        LOG4CPLUS_INFO(logger, "🛈  - [Process" << getpid() << "] Up and running!");
+        backend.Start();
+    }
+    catch (std::string & exc) {
+        LOG4CPLUS_ERROR(logger, "✖ - Exception:" << exc);
+    }
+    catch (const char * exc) {
+        LOG4CPLUS_ERROR(logger, "✖ - Exception:" << exc);
+    }
 
-  } catch (std::string &e) {
-    LOG4CPLUS_ERROR(logger, "✖ - Exception:" << e);
-  } catch (const char *e) {
-    LOG4CPLUS_ERROR(logger, "✖ - Exception:" << e);
-  }
-
-  LOG4CPLUS_INFO(logger, "🛈  - [Process " << getpid() << "] Shutdown");
-  return 0;
+    LOG4CPLUS_INFO(logger, "🛈  - [Process " << getpid() << "] Shutdown");
+    return 0;
 }
