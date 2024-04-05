@@ -32,11 +32,16 @@
 using namespace std;
 
 extern "C" cudnnStatus_t CUDNNWINAPI cudnnCreate        (cudnnHandle_t *handle) {
+//    printf("1:\n");
     CudnnFrontend::Prepare();
-    //CudnnFrontend::AddHostPointerForArguments<cudnnHandle_t>(handle);
+
+//    CudnnFrontend::AddHostPointerForArguments<cudnnHandle_t>(handle);
     CudnnFrontend::Execute("cudnnCreate");
+//    printf("2:\n");
     if(CudnnFrontend::Success())
-        *handle = *(CudnnFrontend::GetOutputHostPointer<cudnnHandle_t>());
+        *handle = (CudnnFrontend::GetOutputVariable<cudnnHandle_t>());
+//        *handle = *(CudnnFrontend::GetOutputHostPointer<cudnnHandle_t>());
+//    printf("3:\n");
     return CudnnFrontend::GetExitCode();
 }
 
