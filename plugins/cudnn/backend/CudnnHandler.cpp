@@ -55,11 +55,11 @@ CudnnHandler::~CudnnHandler() {
 
 void CudnnHandler::setLogLevel(Logger *logger) {
 	log4cplus::LogLevel logLevel=log4cplus::INFO_LOG_LEVEL;
-	char * val = getenv("GVIRTUS_LOGLEVEL");
-	std::string logLevelString =(val == NULL ? std::string("") : std::string(val));
-	if(logLevelString != "") {
-		logLevel=std::stoi(logLevelString);
-	}
+	// char * val = getenv("GVIRTUS_LOGLEVEL");
+	// std::string logLevelString =(val == NULL ? std::string("") : std::string(val));
+	// if(logLevelString != "") {
+	// 	logLevel=std::stoi(logLevelString);
+	// }
 	logger->setLogLevel(logLevel);
 }
 
@@ -69,7 +69,7 @@ bool CudnnHandler::CanExecute(std::string routine) {
 }
 
 std::shared_ptr<Result> CudnnHandler::Execute(std::string routine, std::shared_ptr<Buffer> input_buffer) {
-    LOG4CPLUS_DEBUG(logger,"Called " << routine);
+    //LOG4CPLUS_DEBUG(logger,"Called " << routine);
     map<string, CudnnHandler::CudnnRoutineHandler>::iterator it;
     it = mspHandlers->find(routine);
     if (it == mspHandlers->end())
@@ -551,7 +551,7 @@ CUDNN_ROUTINE_HANDLER(SetConvolutionGroupCount){
 
      cudnnStatus_t cs = cudnnSetConvolutionGroupCount(convDesc, groupCount);
 
-     LOG4CPLUS_DEBUG(logger, "cudnnSetConvolutionGroupCount Executed");   
+    //  LOG4CPLUS_DEBUG(logger, "cudnnSetConvolutionGroupCount Executed");   
      //cout << " DEBUG - cudnnSetConvolutionGroupCount Executed"<<endl;
      return std::make_shared<Result>(cs);
  }
@@ -584,7 +584,7 @@ CUDNN_ROUTINE_HANDLER(FindConvolutionForwardAlgorithmEx){
         LOG4CPLUS_DEBUG(logger,e);
         return std::make_shared<Result>(cs);
     }
-    LOG4CPLUS_DEBUG(logger,"cudnnFindConvolutionForwardAlgorithmEx Executed");
+    //LOG4CPLUS_DEBUG(logger,"cudnnFindConvolutionForwardAlgorithmEx Executed");
     return std::make_shared<Result>(cs,out);  
 }
 
@@ -615,7 +615,7 @@ CUDNN_ROUTINE_HANDLER(GetConvolutionNdDescriptor){
         LOG4CPLUS_DEBUG(logger,e);
         return std::make_shared<Result>(cs);
     }
-    LOG4CPLUS_DEBUG(logger,"cudnnGetConvolutionNdDescriptor Executed");
+    //LOG4CPLUS_DEBUG(logger,"cudnnGetConvolutionNdDescriptor Executed");
     return std::make_shared<Result>(cs,out);   
 }
 
@@ -644,7 +644,7 @@ CUDNN_ROUTINE_HANDLER(GetConvolutionForwardAlgorithm){
         LOG4CPLUS_DEBUG(logger,e);
         return std::make_shared<Result>(cs);
     }
-    LOG4CPLUS_DEBUG(logger,"cudnnGetConvolutionForwardAlgorithm  Executed");
+    //LOG4CPLUS_DEBUG(logger,"cudnnGetConvolutionForwardAlgorithm  Executed");
     return std::make_shared<Result>(cs,out);
 }
 #endif
@@ -672,7 +672,7 @@ CUDNN_ROUTINE_HANDLER(GetConvolutionForwardAlgorithm_v7){
         LOG4CPLUS_DEBUG(logger,e);
         return std::make_shared<Result>(cs);
     }
-    LOG4CPLUS_DEBUG(logger,"cudnnGetConvolutionForwardAlgorithm_v7  Executed");
+    //LOG4CPLUS_DEBUG(logger,"cudnnGetConvolutionForwardAlgorithm_v7  Executed");
     return std::make_shared<Result>(cs,out);
 }
 #endif
@@ -692,7 +692,7 @@ CUDNN_ROUTINE_HANDLER(GetConvolutionReorderType){
         LOG4CPLUS_DEBUG(logger,e);
         return std::make_shared<Result>(cs);
     }
-    LOG4CPLUS_DEBUG(logger,"cudnnGetConvolutionReorderType  Executed");
+    //LOG4CPLUS_DEBUG(logger,"cudnnGetConvolutionReorderType  Executed");
     return std::make_shared<Result>(cs,out); 
 }
 
@@ -704,7 +704,7 @@ CUDNN_ROUTINE_HANDLER(SetConvolutionMathType){
 
    cudnnStatus_t cs = cudnnSetConvolutionMathType(convDesc, mathType);
 
-    LOG4CPLUS_DEBUG(logger,"cudnnSetConvolutionMathType  Executed");
+    (logger,"cudnnSetConvolutionMathType  Executed");
     return std::make_shared<Result>(cs);
 }
 
@@ -739,7 +739,7 @@ CUDNN_ROUTINE_HANDLER(ConvolutionBiasActivationForward){
         LOG4CPLUS_DEBUG(logger,e);
         return std::make_shared<Result>(cs);
     }
-    LOG4CPLUS_DEBUG(logger,"cudnnConvolutionBiasActivationForward  Executed");
+    //LOG4CPLUS_DEBUG(logger,"cudnnConvolutionBiasActivationForward  Executed");
     return std::make_shared<Result>(cs,out);  
 }
 
@@ -774,7 +774,7 @@ CUDNN_ROUTINE_HANDLER(onvolutionBiasActivationForward){
         LOG4CPLUS_DEBUG(logger,e);
         return std::make_shared<Result>(cs);
     }
-    LOG4CPLUS_DEBUG(logger,"onvolutionBiasActivationForward  Executed");
+    //LOG4CPLUS_DEBUG(logger,"onvolutionBiasActivationForward  Executed");
     return std::make_shared<Result>(cs,out);  
 }
 
@@ -793,7 +793,7 @@ CUDNN_ROUTINE_HANDLER(GetConvolutionBackwardFilterAlgorithmMaxCount){
         LOG4CPLUS_DEBUG(logger,e);
         return std::make_shared<Result>(cs);
     }
-    //LOG4CPLUS_DEBUG(logger,"GetConvolutionBackwardFilterAlgorithmMaxCount  Executed");
+    ////LOG4CPLUS_DEBUG(logger,"GetConvolutionBackwardFilterAlgorithmMaxCount  Executed");
     return std::make_shared<Result>(cs,out);
 }
 
@@ -820,7 +820,7 @@ CUDNN_ROUTINE_HANDLER(GetConvolutionBackwardFilterAlgorithm){
         LOG4CPLUS_DEBUG(logger,e);
         return std::make_shared<Result>(cs);
     }
-    LOG4CPLUS_DEBUG(logger,"GetConvolutionBackwardFilterAlgorithm  Executed");
+    //LOG4CPLUS_DEBUG(logger,"GetConvolutionBackwardFilterAlgorithm  Executed");
     return std::make_shared<Result>(cs,out);
 }
 #endif
@@ -848,7 +848,7 @@ CUDNN_ROUTINE_HANDLER(GetConvolutionBackwardFilterAlgorithm_v7){
         LOG4CPLUS_DEBUG(logger,e);
         return std::make_shared<Result>(cs);
     }
-    LOG4CPLUS_DEBUG(logger,"GetConvolutionBackwardFilterAlgorithm_v7  Executed");
+    //LOG4CPLUS_DEBUG(logger,"GetConvolutionBackwardFilterAlgorithm_v7  Executed");
     return std::make_shared<Result>(cs,out);   
 }
 #endif
@@ -875,7 +875,7 @@ CUDNN_ROUTINE_HANDLER(FindConvolutionForwardAlgorithm){
         LOG4CPLUS_DEBUG(logger,e);
         return std::make_shared<Result>(cs);
     }
-    LOG4CPLUS_DEBUG(logger,"FindConvolutionForwardAlgorithm  Executed");
+    //LOG4CPLUS_DEBUG(logger,"FindConvolutionForwardAlgorithm  Executed");
     return std::make_shared<Result>(cs,out);
 }
 
@@ -894,7 +894,7 @@ CUDNN_ROUTINE_HANDLER(GetConvolutionGroupCount){
         LOG4CPLUS_DEBUG(logger,e);
         return std::make_shared<Result>(cs);
     }
-    LOG4CPLUS_DEBUG(logger,"cudnnGetConvolutionGroupCount  Executed");
+    //LOG4CPLUS_DEBUG(logger,"cudnnGetConvolutionGroupCount  Executed");
     return std::make_shared<Result>(cs,out); 
 }
 
@@ -905,7 +905,7 @@ CUDNN_ROUTINE_HANDLER(DestroyConvolutionDescriptor){
 
     cudnnStatus_t cs = cudnnDestroyConvolutionDescriptor(convDesc);
 
-    //LOG4CPLUS_DEBUG(logger,"cudnnDestroyConvolutionDescriptor  Executed");
+    ////LOG4CPLUS_DEBUG(logger,"cudnnDestroyConvolutionDescriptor  Executed");
     return std::make_shared<Result>(cs);
 }
 
@@ -931,7 +931,7 @@ CUDNN_ROUTINE_HANDLER(ConvolutionBackwardBias){
         LOG4CPLUS_DEBUG(logger,e);
         return std::make_shared<Result>(cs);
     }
-    //LOG4CPLUS_DEBUG(logger,"cudnnConvolutionBackwardBias  Executed");
+    ////LOG4CPLUS_DEBUG(logger,"cudnnConvolutionBackwardBias  Executed");
     return std::make_shared<Result>(cs,out);
 }
 
@@ -967,7 +967,7 @@ CUDNN_ROUTINE_HANDLER(ConvolutionForward){
         LOG4CPLUS_DEBUG(logger,e);
         return std::make_shared<Result>(cs);
     }
-    //LOG4CPLUS_DEBUG(logger,"cudnnConvolutionForward  Executed");
+    ////LOG4CPLUS_DEBUG(logger,"cudnnConvolutionForward  Executed");
     return std::make_shared<Result>(cs,out);  
 }
 
@@ -1000,7 +1000,7 @@ CUDNN_ROUTINE_HANDLER(ConvolutionBackwardFilter){
         LOG4CPLUS_DEBUG(logger,e);
         return std::make_shared<Result>(cs);
     }
-    //LOG4CPLUS_DEBUG(logger,"cudnnConvolutionBackwardFilter  Executed");
+    ////LOG4CPLUS_DEBUG(logger,"cudnnConvolutionBackwardFilter  Executed");
     return std::make_shared<Result>(cs,out);  
 }
 
@@ -1028,7 +1028,7 @@ CUDNN_ROUTINE_HANDLER(GetConvolution2dForwardOutputDim){
         LOG4CPLUS_DEBUG(logger,e);
         return std::make_shared<Result>(cs);
     }
-    //LOG4CPLUS_DEBUG(logger,"cudnnGetConvolution2dForwardOutputDim  Executed");
+    ////LOG4CPLUS_DEBUG(logger,"cudnnGetConvolution2dForwardOutputDim  Executed");
     return std::make_shared<Result>(cs,out);  
 }
 
@@ -1053,7 +1053,7 @@ CUDNN_ROUTINE_HANDLER(GetConvolutionBackwardFilterWorkspaceSize){
         LOG4CPLUS_DEBUG(logger,e);
         return std::make_shared<Result>(cs);
     }
-    //LOG4CPLUS_DEBUG(logger,"cudnnGetConvolutionBackwardFilterWorkspaceSize  Executed");
+    ////LOG4CPLUS_DEBUG(logger,"cudnnGetConvolutionBackwardFilterWorkspaceSize  Executed");
     return std::make_shared<Result>(cs,out);
 }
 
@@ -1071,7 +1071,7 @@ CUDNN_ROUTINE_HANDLER(CreateConvolutionDescriptor){
         LOG4CPLUS_DEBUG(logger,e);
         return std::make_shared<Result>(cs);
     }
-    //LOG4CPLUS_DEBUG(logger,"cudnnCreateConvolutionDescriptor  Executed");
+    ////LOG4CPLUS_DEBUG(logger,"cudnnCreateConvolutionDescriptor  Executed");
     return std::make_shared<Result>(cs,out); 
 }
 
@@ -1097,7 +1097,7 @@ CUDNN_ROUTINE_HANDLER(GetConvolutionBackwardFilterAlgorithm){
         LOG4CPLUS_DEBUG(logger,e);
         return std::make_shared<Result>(cs);
     }
-    //LOG4CPLUS_DEBUG(logger,"cudnnGetConvolutionBackwardFilterAlgorithm  Executed");
+    ////LOG4CPLUS_DEBUG(logger,"cudnnGetConvolutionBackwardFilterAlgorithm  Executed");
     return std::make_shared<Result>(cs,out);   
 }
 #endif
@@ -1124,7 +1124,7 @@ CUDNN_ROUTINE_HANDLER(SetConvolution2dDescriptor){
         LOG4CPLUS_DEBUG(logger,e);
         return std::make_shared<Result>(cs);
     }
-    //LOG4CPLUS_DEBUG(logger,"cudnnSetConvolution2dDescriptor  Executed");
+    ////LOG4CPLUS_DEBUG(logger,"cudnnSetConvolution2dDescriptor  Executed");
     return std::make_shared<Result>(cs,out);
 }
 
@@ -1150,7 +1150,7 @@ CUDNN_ROUTINE_HANDLER(GetConvolutionForwardAlgorithm){
         LOG4CPLUS_DEBUG(logger,e);
         return std::make_shared<Result>(cs);
     }
-    //LOG4CPLUS_DEBUG(logger,"cudnnGetConvolutionForwardAlgorithm  Executed");
+    ////LOG4CPLUS_DEBUG(logger,"cudnnGetConvolutionForwardAlgorithm  Executed");
     return std::make_shared<Result>(cs,out);
 }
 #endif
@@ -1175,7 +1175,7 @@ CUDNN_ROUTINE_HANDLER(GetConvolutionForwardWorkspaceSize){
         LOG4CPLUS_DEBUG(logger,e);
         return std::make_shared<Result>(cs);
     }
-    //LOG4CPLUS_DEBUG(logger,"cudnnGetConvolutionForwardWorkspaceSize  Executed");
+    ////LOG4CPLUS_DEBUG(logger,"cudnnGetConvolutionForwardWorkspaceSize  Executed");
     return std::make_shared<Result>(cs,out);
 }
 
@@ -1183,7 +1183,7 @@ CUDNN_ROUTINE_HANDLER(GetVersion){
     Logger logger = Logger::getInstance(LOG4CPLUS_TEXT("GetVersion"));
 
     size_t version = cudnnGetVersion();
-    LOG4CPLUS_DEBUG(logger,"cudnnGetVersion Executed");
+    //LOG4CPLUS_DEBUG(logger,"cudnnGetVersion Executed");
     return std::make_shared<Result>(version);
 }
 
@@ -1198,7 +1198,7 @@ CUDNN_ROUTINE_HANDLER(GetErrorString){
         LOG4CPLUS_DEBUG(logger,e);
         return std::make_shared<Result>(CUDNN_STATUS_EXECUTION_FAILED);
     }
-    //LOG4CPLUS_DEBUG(logger,"cudnnGetErrorString Executed");
+    ////LOG4CPLUS_DEBUG(logger,"cudnnGetErrorString Executed");
     return std::make_shared<Result>(CUDNN_STATUS_SUCCESS,out);
 }
 
@@ -1214,7 +1214,7 @@ CUDNN_ROUTINE_HANDLER(Create){
                         LOG4CPLUS_DEBUG(logger,e);
                         return std::make_shared<Result>(CUDNN_STATUS_EXECUTION_FAILED);
     }
-    //LOG4CPLUS_DEBUG(logger,"cudnnCreate Executed");
+    ////LOG4CPLUS_DEBUG(logger,"cudnnCreate Executed");
     return std::make_shared<Result>(cs,out);
 
 }
@@ -1225,7 +1225,7 @@ CUDNN_ROUTINE_HANDLER(Destroy){
     cudnnHandle_t handle = (cudnnHandle_t)in->Get<long long int>();
     cudnnStatus_t cs = cudnnDestroy(handle);
     
-    //LOG4CPLUS_DEBUG(logger,"cudnnDestroy Executed");
+    ////LOG4CPLUS_DEBUG(logger,"cudnnDestroy Executed");
     //cout << "DEBUG - cudnnDestroy Executed"<<endl;
     return std::make_shared<Result>(cs);
 }
@@ -1237,7 +1237,7 @@ CUDNN_ROUTINE_HANDLER(SetStream){
 
     cudnnStatus_t cs = cudnnSetStream(handle,streamId);
     
-     LOG4CPLUS_DEBUG(logger," cudnnSetStream Executed");
+     //LOG4CPLUS_DEBUG(logger," cudnnSetStream Executed");
    //cout << "DEBUG - cudnnSetStream Executed"<<endl;
     return std::make_shared<Result>(cs);
 }
@@ -1271,7 +1271,7 @@ CUDNN_ROUTINE_HANDLER(CreateTensorDescriptor){
          LOG4CPLUS_DEBUG(logger,e);
          return std::make_shared<Result>(cs);
     }
-    //LOG4CPLUS_DEBUG(logger,"cudnnCreateTensorDescriptor Executed");
+    ////LOG4CPLUS_DEBUG(logger,"cudnnCreateTensorDescriptor Executed");
     return std::make_shared<Result>(cs,out);
 }
 
@@ -1296,7 +1296,7 @@ CUDNN_ROUTINE_HANDLER(SetTensor4dDescriptor){
          LOG4CPLUS_DEBUG(logger,e);
          return std::make_shared<Result>(cs);
     }                      
-    //LOG4CPLUS_DEBUG(logger,"cudnnSetTensor4dDescriptor Executed");
+    ////LOG4CPLUS_DEBUG(logger,"cudnnSetTensor4dDescriptor Executed");
     return std::make_shared<Result>(cs,out);
 }
 
@@ -2032,7 +2032,7 @@ CUDNN_ROUTINE_HANDLER(CreateFilterDescriptor){
         LOG4CPLUS_DEBUG(logger, e);
         return std::make_shared<Result>(cs);
    }
-   //LOG4CPLUS_DEBUG(logger,"cudnnCreateFilterDescriptor Executed");
+   ////LOG4CPLUS_DEBUG(logger,"cudnnCreateFilterDescriptor Executed");
    return std::make_shared<Result>(cs, out);
 }
 
@@ -2056,7 +2056,7 @@ CUDNN_ROUTINE_HANDLER(SetFilter4dDescriptor){
         LOG4CPLUS_DEBUG(logger, e);
         return std::make_shared<Result>(cs);
    }   
-   //LOG4CPLUS_DEBUG(logger,"cudnnSetFilter4dDescriptor Executed");
+   ////LOG4CPLUS_DEBUG(logger,"cudnnSetFilter4dDescriptor Executed");
    return std::make_shared<Result>(cs,out);
 }
 

@@ -187,7 +187,7 @@ CUBLAS_ROUTINE_HANDLER(SetStream_v2){
     cudaStream_t streamId = (cudaStream_t) in->Get<long long int>();
     
     cublasStatus_t cs = cublasSetStream_v2(handle,streamId);
-    cout << "DEBUG - cublasSetStream Executed"<<endl;
+    // cout << "DEBUG - cublasSetStream Executed"<<endl;
     return std::make_shared<Result>(cs);
 }
 
