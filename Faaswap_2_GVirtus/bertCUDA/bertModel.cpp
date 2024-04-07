@@ -155,7 +155,7 @@ void destoryDescriptor(){
 // ===========================================================fv
 //
 void cublasSetStreamService() { cublasSetStream(cublas_handle_, 0);}
-// void cublasSetMathModeService() { cublasSetMathMode(cublas_handle_, CUBLAS_TENSOR_OP_MATH);}
+void cublasSetMathModeService() { cublasSetMathMode(cublas_handle_, CUBLAS_TENSOR_OP_MATH);}
 void cublasSgemmService() {
     cublasSgemm(cublas_handle_,
                 CUBLAS_OP_N, CUBLAS_OP_N,
@@ -358,9 +358,9 @@ void parse(const cudarpc::QueryType &type) {
         case cudarpc::QueryType::cuBLAS_cublasSetStream:
             cublasSetStreamService(); // 带一个参数
             break;
-        // // case cudarpc::QueryType::cuBLAS_cublasSetMathMode:
-        // //     cublasSetMathModeService();
-        // //     break;
+        case cudarpc::QueryType::cuBLAS_cublasSetMathMode: // 带一个参数
+            cublasSetMathModeService();
+            break;
         case cudarpc::QueryType::cuBLAS_cublasSgemm:
             cublasSgemmService(); // 计算密集型
             break;

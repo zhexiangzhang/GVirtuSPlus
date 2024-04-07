@@ -170,6 +170,17 @@ extern "C"  CUBLASAPI cublasStatus_t CUBLASWINAPI cublasSetPointerMode_v2(cublas
     return CublasFrontend::GetExitCode();
 }
 
+// add one
+//cublasStatus_t cublasSetMathMode(cublasHandle_t handle, cublasMath_t mode)
+extern "C" CUBLASAPI cublasStatus_t CUBLASWINAPI cublasSetMathMode(cublasHandle_t handle, cublasMath_t mode){
+    CublasFrontend::Prepare();
+    
+    CublasFrontend::AddVariableForArguments<long long int>((long long int)handle);
+    CublasFrontend::AddVariableForArguments<cublasMath_t>(mode);
+    CublasFrontend::Execute("cublasSetMathMode");
+    return CublasFrontend::GetExitCode();
+}
+
 /*
 extern "C" CUBLASAPI cublasStatus_t CUBLASWINAPI cublasGetMatrix (int rows, int cols, int elemSize, const void *A, int lda, void *B, int ldb) {
     CublasFrontend::Prepare();

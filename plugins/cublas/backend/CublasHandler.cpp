@@ -130,6 +130,8 @@ CublasHandler::Initialize() {
   mspHandlers->insert(CUBLAS_ROUTINE_HANDLER_PAIR(SetStream_v2));
   mspHandlers->insert(CUBLAS_ROUTINE_HANDLER_PAIR(GetPointerMode_v2));
   mspHandlers->insert(CUBLAS_ROUTINE_HANDLER_PAIR(SetPointerMode_v2));
+  // add one
+  mspHandlers->insert(CUBLAS_ROUTINE_HANDLER_PAIR(SetMathMode));  
 
   /* CublasHandler Level1 functions */
   mspHandlers->insert(CUBLAS_ROUTINE_HANDLER_PAIR(Sdot_v2));

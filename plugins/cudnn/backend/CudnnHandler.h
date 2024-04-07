@@ -178,6 +178,9 @@ CUDNN_ROUTINE_HANDLER(Destroy);
 CUDNN_ROUTINE_HANDLER(SetStream);
 CUDNN_ROUTINE_HANDLER(GetStream); 
 CUDNN_ROUTINE_HANDLER(CreateTensorDescriptor);
+// add one
+// StreamIsCapturing
+// CUDNN_ROUTINE_HANDLER(StreamIsCapturing);
 CUDNN_ROUTINE_HANDLER(SetTensor4dDescriptor);
 CUDNN_ROUTINE_HANDLER(SetTensor4dDescriptorEx);
 CUDNN_ROUTINE_HANDLER(GetTensor4dDescriptor);

@@ -95,6 +95,9 @@ void CudnnHandler::Initialize(){
     mspHandlers->insert(CUDNN_ROUTINE_HANDLER_PAIR(Destroy));
     mspHandlers->insert(CUDNN_ROUTINE_HANDLER_PAIR(SetStream));
     mspHandlers->insert(CUDNN_ROUTINE_HANDLER_PAIR(GetStream)); 
+    // add one
+    //StreamIsCapturing
+    // mspHandlers->insert(CUDNN_ROUTINE_HANDLER_PAIR(StreamIsCapturing));
     mspHandlers->insert(CUDNN_ROUTINE_HANDLER_PAIR(CreateTensorDescriptor));
     mspHandlers->insert(CUDNN_ROUTINE_HANDLER_PAIR(SetTensor4dDescriptor));
     mspHandlers->insert(CUDNN_ROUTINE_HANDLER_PAIR(SetTensor4dDescriptorEx));
@@ -541,7 +544,23 @@ CUDNN_ROUTINE_HANDLER(GetConvolution2dDescriptor){
  }
 
 
-
+// add one
+//__host__​cudaError_t cudaStreamIsCapturing ( cudaStream_t stream, cudaStreamCaptureStatus ** pCaptureStatus )
+// CUDNN_ROUTINE_HANDLER(StreamIsCapturing){
+//     Logger logger = Logger::getInstance(LOG4CPLUS_TEXT("StreamIsCapturing"));
+//     cudaStream_t stream = (cudaStream_t)in->Get<long long int>();
+//     cudaStreamCaptureStatus *pCaptureStatus;
+//     cudaError_t cs = cudaStreamIsCapturing(stream, pCaptureStatus);
+//     std::shared_ptr<Buffer> out = std::make_shared<Buffer>();
+//     try {
+//          out->Add<cudaStreamCaptureStatus *>(pCaptureStatus);
+//     } catch (string e){
+//          LOG4CPLUS_DEBUG(logger,e);
+//          return std::make_shared<Result>(cs);
+//     }
+//     //LOG4CPLUS_DEBUG(logger,"cudaStreamIsCapturing Executed");
+//     return std::make_shared<Result>(cs,out);
+// }
 
 CUDNN_ROUTINE_HANDLER(SetConvolutionGroupCount){
      Logger logger = Logger::getInstance(LOG4CPLUS_TEXT("SetConvolutionGroupCount"));

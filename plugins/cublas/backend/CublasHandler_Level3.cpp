@@ -72,7 +72,7 @@ CUBLAS_ROUTINE_HANDLER(SgemmBatched_v2){
         LOG4CPLUS_DEBUG(logger,e);
         return std::make_shared<Result>(cudaErrorMemoryAllocation);
     }
-    cout << "DEBUG - cublasSgemmBatched_v2 Executed"<<endl;
+    // cout << "DEBUG - cublasSgemmBatched_v2 Executed"<<endl;
     return std::make_shared<Result>(cs,out);
 }
 

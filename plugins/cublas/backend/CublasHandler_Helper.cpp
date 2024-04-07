@@ -246,6 +246,17 @@ CUBLAS_ROUTINE_HANDLER(SetPointerMode_v2){
     return std::make_shared<Result>(cs,out);
 }
 
+// add one
+//cublasStatus_t cublasSetMathMode(cublasHandle_t handle, cublasMath_t mode)
+CUBLAS_ROUTINE_HANDLER(SetMathMode){
+    Logger logger=Logger::getInstance(LOG4CPLUS_TEXT("SetMathMode"));
+    
+    cublasHandle_t handle = (cublasHandle_t)in->Get<long long int>();
+    cublasMath_t mode = in->Get<cublasMath_t>();
+    cublasStatus_t cs = cublasSetMathMode(handle,mode);
+    // cout << "DEBUG - cublasSetMathMode Executed"<<endl;
+    return std::make_shared<Result>(cs);
+}
 
 /*CUBLAS_ROUTINE_HANDLER(SetMatrix) {
     int rows=in->Assign<int>();

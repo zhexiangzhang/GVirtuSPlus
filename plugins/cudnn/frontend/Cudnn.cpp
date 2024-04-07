@@ -45,6 +45,20 @@ extern "C" const char * CUDNNWINAPI cudnnGetErrorString(cudnnStatus_t status){
     CudnnFrontend::Execute("cudnnGetErrorString");
     return (const char *) CudnnFrontend::GetOutputHostPointer<char *>();
 }
+
+// add one 
+// __host__​cudaError_t cudaStreamIsCapturing ( cudaStream_t stream, cudaStreamCaptureStatus ** pCaptureStatus )
+// extern "C" cudnnStatus_t CUDNNWINAPI cudaStreamIsCapturing(cudaStream_t stream, cudaStreamCaptureStatus **pCaptureStatus){
+//     CudnnFrontend::Prepare();
+
+//     CudnnFrontend::AddVariableForArguments<long long int>((long long int)stream);
+//     CudnnFrontend::Execute("cudaStreamIsCapturing");
+//     if(CudnnFrontend::Success()){
+//         *pCaptureStatus = (cudaStreamCaptureStatus *)CudnnFrontend::GetOutputVariable<long long int>();
+//     }
+//     return CudnnFrontend::GetExitCode();
+// }
+
 /*
 extern "C" cudnnStatus_t CUDNNWINAPI cudnnCreate(cudnnHandle_t *handle){
     CudnnFrontend::Prepare();
