@@ -9,7 +9,7 @@
 #include "/usr/local/cuda-11.4/targets/x86_64-linux/include/cublas_v2.h"
 #include "/usr/local/cuda-11.4/targets/x86_64-linux/include/cudnn.h"
 #include </usr/local/cuda-11.4/targets/x86_64-linux/include/cuda_runtime.h>
-
+// 11
 #define CHECK_CUDA(call) { \
     const cudaError_t error = call; \
     if (error != cudaSuccess) { \
@@ -49,8 +49,10 @@ cudnnFilterDescriptor_t f1;
 cudnnConvolutionDescriptor_t tc1;
 float *space1;
 
+cudaStream_t stream;
+
 float *d_memory;
-size_t totalSize = 1L * 1024 * 1024 * 1024; // 10GB
+size_t totalSize = 5L * 1024 * 1024 * 1024; // 10GB
 float *d_output;
 
 std::vector<cudnnTensorDescriptor_t> tensorDescriptorsVector;
@@ -69,15 +71,37 @@ size_t workspace_bytes = 0;
 
 float A[15], B[12], C[20];
 
-int batchCount = 10;
-    
-float *A_mem = new float[15 * batchCount];
-float *B_mem = new float[12 * batchCount];
-float *C_mem = new float[20 * batchCount];
+/*
+only for cublasSgemmStridedBatchedService function
+======================================================================
+*/   
+const int cublasBatch = 5; 
+
+// 在主机上创建临时数组
+const float* h_Aarray[cublasBatch];
+float* h_Carray[cublasBatch];
+
+// 在设备上为指针数组分配空间
+const float** cublasAarry;
+float** cublasCarry;
+
+void initForcublasSgemmStridedBatchedService() {    
+    cudaMalloc(&cublasAarry, cublasBatch * sizeof(float*));    
+    cudaMalloc(&cublasCarry, cublasBatch * sizeof(float*));
+
+    for (int i = 0; i < cublasBatch; ++i) {
+        h_Aarray[i] = d_memory;        
+        // h_Barray[i] = d_memory + cublasBatch * m * k + i * k * n;
+        h_Carray[i] = d_memory;
+    }
+
+    cudaMemcpy(cublasAarry, h_Aarray, cublasBatch * sizeof(float*), cudaMemcpyHostToDevice);
+    cudaMemcpy(cublasCarry, h_Carray, cublasBatch * sizeof(float*), cudaMemcpyHostToDevice);
+}
+
+//======================================================================
 
 void initGlobalVar(){
-    cublasCreate(&cublas_handle_);
-
     try {
         CHECK_CUDNN(cudnnCreate(&handle));
 
@@ -91,6 +115,7 @@ void initGlobalVar(){
     cudaDeviceSynchronize();
 
     CHECK_CUDNN(cudnnCreateConvolutionDescriptor(&tc1));
+    cudaStreamCreate(&stream);  
 }
 
 void destoryinitGlobalVar(){
@@ -134,34 +159,45 @@ void cublasSetStreamService() { cublasSetStream(cublas_handle_, 0);}
 void cublasSgemmService() {
     cublasSgemm(cublas_handle_,
                 CUBLAS_OP_N, CUBLAS_OP_N,
-                5, 4, 3,
-                &alpha, A, 5, B, 3, &beta, C, 5);}
-void cublasSgemmStridedBatchedService() {
-    // int batchCount = 10;
-    // float A_batch[15 * batchCount], B_batch[12 * batchCount], C_batch[20 * batchCount]; // 假定这些矩阵已经初始化
+                500, 400, 300,
+                &alpha, d_memory, 500, d_memory, 300, &beta, d_memory, 500);}
 
-    // cublasSgemmStridedBatched(cublas_handle_,
-    //                           CUBLAS_OP_N, CUBLAS_OP_N,
-    //                           5, 4, 3,
-    //                           &alpha,
-    //                           A_batch, 5, 15,
-    //                           B_batch, 3, 12,
-    //                           &beta,
-    //                           C_batch, 5, 20,
-    //                           10);
-    
-    float *A_batch[10], *B_batch[10], *C_batch[10];
-            
+void cublasSgemmStridedBatchedService() {
     cublasSgemmBatched(cublas_handle_,
-                              CUBLAS_OP_N, CUBLAS_OP_N,
-                              5, 4, 3,
-                              &alpha,
-                              (const float * const *)A_batch, 5,
-                              (const float * const *)B_batch, 3,
-                              &beta,
-                              C_batch, 5,
-                              batchCount);                           
+                        CUBLAS_OP_N, CUBLAS_OP_N,
+                        5, 4, 3,
+                        &alpha,
+                        cublasAarry, 5,
+                        cublasAarry, 3,
+                        &beta,
+                        cublasCarry, 5,
+                        cublasBatch);                  
 }
+void cudaStreamSynchronizeService() { cudaStreamSynchronize(0);}
+
+// void cudaStreamIsCapturingService() {
+//     cudaStreamCaptureStatus captureStatus;
+//     // cudaStreamIsCapturing(stream, &captureStatus);
+//     cudaStreamIsCapturing(0, &captureStatus);
+// }
+
+void cudaMemcpyAsyncService() {
+    // from src --copy-> count bbyte to dst。
+    // cudaStream_t 类型的参数来指定操作关联的流。
+    const int copy_size = 4096;
+    float* h_src = new float[copy_size]; // host
+    for (int i = 0; i < copy_size; i++) {
+        h_src[i] = static_cast<float>(i);
+    }
+
+    size_t count = copy_size * sizeof(float);  
+    cudaMemcpyAsync(d_output, h_src, count, cudaMemcpyHostToDevice, 0); // 最后是流
+}
+
+void cublasCreateService(){
+    cublasCreate(&cublas_handle_);
+}
+
 // --------------------------------------------------------------
 void cudaGetLastErrorService() {cudaGetLastError();}  // need to add cudacheck
 void cudaDeviceSynchronizeService() {cudaDeviceSynchronize();}
@@ -320,20 +356,32 @@ void parse(const cudarpc::QueryType &type) {
 //            break;
 // =========================================================
         case cudarpc::QueryType::cuBLAS_cublasSetStream:
-            cublasSetStreamService();
+            cublasSetStreamService(); // 带一个参数
             break;
-        // case cudarpc::QueryType::cuBLAS_cublasSetMathMode:
-        //     cublasSetMathModeService();
-        //     break;
+        // // case cudarpc::QueryType::cuBLAS_cublasSetMathMode:
+        // //     cublasSetMathModeService();
+        // //     break;
         case cudarpc::QueryType::cuBLAS_cublasSgemm:
-            cublasSgemmService();
+            cublasSgemmService(); // 计算密集型
             break;
-        // case cudarpc::QueryType::cuBLAS_cublasSgemmStridedBatched:
-        //     cublasSgemmStridedBatchedService();
+        case cudarpc::QueryType::cuBLAS_cublasSgemmStridedBatched:
+            cublasSgemmStridedBatchedService(); // 计算密集型
+            break;
+        case cudarpc::QueryType::cudaStreamSynchronize:
+            cudaStreamSynchronizeService(); // 带一个参数
+            break;
+        // case cudarpc::QueryType::cudaStreamIsCapturing:  // 编译不存在，等会应该要解决
+        //     cudaStreamIsCapturingService(); // 忽略参数
         //     break;
+        case cudarpc::QueryType::cudaMemcpyAsync: // 复制的size，以及复制的流，0是默认阻塞流，用户创建的是异步，允许并发
+            cudaMemcpyAsyncService();
+            break;
+        case cudarpc::QueryType::cuBLAS_cublasCreate:
+            cublasCreateService();
+            break;    
         default:
             inValid++;
-            cudnnSetConvolutionMathTypeService();
+            cublasSgemmService();
             break;
     }
 }
@@ -346,6 +394,7 @@ int main() {
 //    cudnnCreate(&handle);
     initGlobalVar();
     initDescriptor();
+    initForcublasSgemmStridedBatchedService();
 
     std::vector<int> commands;
     std::ifstream commandFile("../bert_cudaLog.txt");
@@ -368,11 +417,12 @@ int main() {
 
     for (int command : commands) {
         cudarpc::QueryType queryType = static_cast<cudarpc::QueryType>(command);
-//        std::cout << cnt++ << " " << queryType << std::endl;
+    //    std::cout << cnt++ << " " << queryType << std::endl;
         parse(queryType);
     }
 
     cudaDeviceSynchronize();
+    
     auto stop = std::chrono::high_resolution_clock::now();
 
     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
