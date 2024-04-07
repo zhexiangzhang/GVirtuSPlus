@@ -32,13 +32,11 @@ def process_file(input_file, output_file):
 
     with open(output_file, 'w') as file:
         file.writelines(processed_lines)
-    
-    # 输出每行内容及其出现的次数
+        
     print("Line counts:")
     for line, count in line_counts.items():
         print(f"{line}: {count}")
     
-    # 输出总行数
     print(f"Total lines: {total_lines}")
 
 process_file('bert_log.txt', 'bert_log_tmp.txt')

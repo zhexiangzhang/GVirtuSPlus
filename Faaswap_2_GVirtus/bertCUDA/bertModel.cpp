@@ -4,8 +4,10 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <sstream>
+#include <regex>
 #include <chrono>
-#include "cudarpc.pb.h"
+#include "proto/cudarpc.pb.h"
 #include "/usr/local/cuda-11.4/targets/x86_64-linux/include/cublas_v2.h"
 #include "/usr/local/cuda-11.4/targets/x86_64-linux/include/cudnn.h"
 #include </usr/local/cuda-11.4/targets/x86_64-linux/include/cuda_runtime.h>
@@ -26,10 +28,72 @@
     } \
 }
 
+//================================================
+// for parse param_type
+struct SgemmParam {
+    int m, n, k, lda, ldb, ldc;
+    double alpha, beta;
+};
 
+struct SgemmStridedBatchedParam {
+    int m, n, k, lda, ldb, ldc;
+    double alpha, beta;
+    int strideA, strideB, strideC, batchCount;
+};
+
+std::vector<SgemmParam> cublasSgemmVector;
+std::vector<SgemmStridedBatchedParam> cublasSSBVector;
+
+void parseAndStoreData(const std::string& line) {
+    std::regex rgx("\\{(\\w+):([\\d\\.]+)\\}"); // 匹配 {key:value} 格式，value可以是整数或浮点数
+    std::sregex_iterator next(line.begin(), line.end(), rgx);
+    std::sregex_iterator end;
+    
+    if (line.find("[cublasSgemm]") != std::string::npos) {
+        SgemmParam param = {};
+        while (next != end) {
+            std::smatch match = *next;
+            std::string key = match[1];
+            std::string value = match[2];
+            if (key == "m") param.m = std::stoi(value);
+            else if (key == "n") param.n = std::stoi(value);
+            else if (key == "k") param.k = std::stoi(value);
+            else if (key == "lda") param.lda = std::stoi(value);
+            else if (key == "ldb") param.ldb = std::stoi(value);
+            else if (key == "ldc") param.ldc = std::stoi(value);
+            else if (key == "alpha") param.alpha = std::stod(value);
+            else if (key == "beta") param.beta = std::stod(value);
+            next++;
+        }
+        cublasSgemmVector.push_back(param);
+    } else if (line.find("[cublasSgemmStridedBatched]") != std::string::npos) {
+        SgemmStridedBatchedParam param = {};
+        while (next != end) {
+            std::smatch match = *next;
+            std::string key = match[1];
+            std::string value = match[2];
+            if (key == "m") param.m = std::stoi(value);
+            else if (key == "n") param.n = std::stoi(value);
+            else if (key == "k") param.k = std::stoi(value);
+            else if (key == "lda") param.lda = std::stoi(value);
+            else if (key == "ldb") param.ldb = std::stoi(value);
+            else if (key == "ldc") param.ldc = std::stoi(value);
+            else if (key == "alpha") param.alpha = std::stod(value);
+            else if (key == "beta") param.beta = std::stod(value);
+            else if (key == "strideA") param.strideA = std::stoi(value);
+            else if (key == "strideB") param.strideB = std::stoi(value);
+            else if (key == "strideC") param.strideC = std::stoi(value);
+            else if (key == "batchCount") param.batchCount = std::stoi(value);
+            next++;
+        }
+        cublasSSBVector.push_back(param);
+    }
+}
+///////////////////////////////////////////////////
 __global__ void emptyKernel() {
     // do nothing
 }
+
 
 cudnnHandle_t handle;
 
@@ -75,7 +139,7 @@ float A[15], B[12], C[20];
 only for cublasSgemmStridedBatchedService function
 ======================================================================
 */   
-const int cublasBatch = 5; 
+const int cublasBatch = 20; 
 
 // 在主机上创建临时数组
 const float* h_Aarray[cublasBatch];
@@ -155,23 +219,23 @@ void destoryDescriptor(){
 // ===========================================================fv
 //
 void cublasSetStreamService() { cublasSetStream(cublas_handle_, 0);}
-void cublasSetMathModeService() { cublasSetMathMode(cublas_handle_, CUBLAS_TENSOR_OP_MATH);}
-void cublasSgemmService() {
+void cublasSetMathModeService() { cublasSetMathMode(cublas_handle_, CUBLAS_DEFAULT_MATH );} // 已确认
+void cublasSgemmService(SgemmParam param) {
     cublasSgemm(cublas_handle_,
                 CUBLAS_OP_N, CUBLAS_OP_N,
-                500, 400, 300,
-                &alpha, d_memory, 500, d_memory, 300, &beta, d_memory, 500);}
+                param.m, param.n, param.k,
+                &alpha, d_memory, param.lda, d_memory, param.ldb, &beta, d_memory, param.ldc);}
 
-void cublasSgemmStridedBatchedService() {
+void cublasSgemmStridedBatchedService(SgemmStridedBatchedParam param) {
     cublasSgemmBatched(cublas_handle_,
                         CUBLAS_OP_N, CUBLAS_OP_N,
-                        5, 4, 3,
+                        param.m, param.n, param.k,
                         &alpha,
-                        cublasAarry, 5,
-                        cublasAarry, 3,
+                        cublasAarry, param.lda,
+                        cublasAarry, param.ldb,
                         &beta,
-                        cublasCarry, 5,
-                        cublasBatch);                  
+                        cublasCarry, param.ldc,
+                        param.batchCount);                 
 }
 void cudaStreamSynchronizeService() { cudaStreamSynchronize(0);}
 
@@ -184,7 +248,7 @@ void cudaStreamSynchronizeService() { cudaStreamSynchronize(0);}
 void cudaMemcpyAsyncService() {
     // from src --copy-> count bbyte to dst。
     // cudaStream_t 类型的参数来指定操作关联的流。
-    const int copy_size = 4096;
+    const int copy_size = 8192;
     float* h_src = new float[copy_size]; // host
     for (int i = 0; i < copy_size; i++) {
         h_src[i] = static_cast<float>(i);
@@ -292,6 +356,10 @@ void cudnnGetConvolutionForwardAlgorithm_v7Service() {
 }
 
 int inValid = 0;
+
+int cublasSgemmCount = 0;
+int cublasSgemmStridedBatchedCount = 0;
+
 void parse(const cudarpc::QueryType &type) {
     switch (type) {
 //        case cudarpc::QueryType::cudnnSetConvolutionNdDescriptor:
@@ -361,11 +429,24 @@ void parse(const cudarpc::QueryType &type) {
         case cudarpc::QueryType::cuBLAS_cublasSetMathMode: // 带一个参数
             cublasSetMathModeService();
             break;
-        case cudarpc::QueryType::cuBLAS_cublasSgemm:
-            cublasSgemmService(); // 计算密集型
+        case cudarpc::QueryType::cuBLAS_cublasSgemm: // 计算密集型
+            // 从cublasSgemmVector中取出对应的参数（第cnt个）
+            if (cublasSgemmCount < cublasSgemmVector.size()) {
+                SgemmParam param = cublasSgemmVector[cublasSgemmCount];
+                cublasSgemmCount++;
+                cublasSgemmService(param);
+            }             
+            else 
+                std::cout << "cublasSgemmCount out of range" << std::endl;
             break;
-        case cudarpc::QueryType::cuBLAS_cublasSgemmStridedBatched:
-            cublasSgemmStridedBatchedService(); // 计算密集型
+        case cudarpc::QueryType::cuBLAS_cublasSgemmStridedBatched: // 计算密集型
+            if (cublasSgemmStridedBatchedCount < cublasSSBVector.size()) {
+                SgemmStridedBatchedParam param = cublasSSBVector[cublasSgemmStridedBatchedCount];
+                cublasSgemmStridedBatchedCount++;
+                cublasSgemmStridedBatchedService(param);
+            }       
+            else 
+                std::cout << "cublasSgemmStridedBatchedCount out of range" << std::endl;
             break;
         case cudarpc::QueryType::cudaStreamSynchronize:
             cudaStreamSynchronizeService(); // 带一个参数
@@ -381,7 +462,7 @@ void parse(const cudarpc::QueryType &type) {
             break;    
         default:
             inValid++;
-            cublasSgemmService();
+            cublasSgemmService(cublasSgemmVector[0]);
             break;
     }
 }
@@ -411,6 +492,19 @@ int main() {
         return 1;
     }
 
+    // read parameter
+    std::ifstream file("/root/zzx/GVirtuSPlus/Faaswap_2_GVirtus/bertCUDA/bert_parameter_well.txt"); 
+    std::string line2;
+
+    if (file.is_open()) {
+        while (getline(file, line2)) {
+            parseAndStoreData(line2);
+        }
+        file.close();
+    } else {
+        std::cerr << "Unable to open file" << std::endl;
+        return 1;
+    }
 
     int cnt = 0;
     auto start = std::chrono::high_resolution_clock::now();
@@ -430,29 +524,6 @@ int main() {
     std::cout << "Total commands: " << commands.size() << "  inValid: " << inValid << std::endl;
     std::cout << "Execution time: " << duration.count() << " ms" << std::endl;
     std::cout << "=======================================================" << std::endl;
-//    for (int i = 0; i < 10; ++i) {
-//        cudaMallocService();
-//        cudnnCreateService();
-//        cudnnSetStreamService();
-//        cudnnDestroyTensorDescriptorService();
-//        cudnnDestroyFilterDescriptorService();
-//        cudnnDestroyConvolutionDescriptorService();
-//        cudnnConvolutionForwardService();
-//        cudnnCreateTensorDescriptorService();
-//        cudnnCreateFilterDescriptorService();
-//        cudnnCreateConvolutionDescriptorService();
-//        cudnnGetConvolutionForwardAlgorithm_v7Service();
-//        cudaLaunchKernelService();
-////        cudnnBatchNormalizationForwardInferenceService();
-////        cudnnSetTensorNdDescriptorService();
-////        cudnnSetFilterNdDescriptorService();
-////        cudnnSetConvolutionNdDescriptorService();
-//        cudnnSetConvolutionMathTypeService();
-//        cudnnSetConvolutionGroupCountService();
-//
-//        cudaGetLastErrorService();
-//        cudaDeviceSynchronize();
-//    }
 
     destoryinitGlobalVar();
     destoryDescriptor();
