@@ -501,7 +501,7 @@ int main() {
     initForcublasSgemmStridedBatchedService();
 
     std::vector<int> commands;
-    std::ifstream commandFile("../bert_cudaLog.txt");
+    std::ifstream commandFile("bert_cudaLog.txt");
     std::string line;
 
     if (commandFile.is_open()) {
@@ -516,7 +516,7 @@ int main() {
     }
 
     // read parameter
-    std::ifstream file("/root/zzx/GVirtuSPlus/Faaswap_2_GVirtus/bertCUDA/bert_parameter_well.txt"); 
+    std::ifstream file("bert_parameter_well.txt"); 
     std::string line2;
 
     if (file.is_open()) {

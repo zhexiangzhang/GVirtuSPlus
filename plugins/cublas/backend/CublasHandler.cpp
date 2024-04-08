@@ -281,6 +281,9 @@ CublasHandler::Initialize() {
   mspHandlers->insert(CUBLAS_ROUTINE_HANDLER_PAIR(Zgemm_v2));
 
   mspHandlers->insert(CUBLAS_ROUTINE_HANDLER_PAIR(SgemmBatched_v2));
+  //  add one
+  // SgemmStridedBatched_v2
+  mspHandlers->insert(CUBLAS_ROUTINE_HANDLER_PAIR(SgemmStridedBatched_v2));
   mspHandlers->insert(CUBLAS_ROUTINE_HANDLER_PAIR(DgemmBatched_v2));
   mspHandlers->insert(CUBLAS_ROUTINE_HANDLER_PAIR(CgemmBatched_v2));
   mspHandlers->insert(CUBLAS_ROUTINE_HANDLER_PAIR(ZgemmBatched_v2));

@@ -30,6 +30,61 @@
 
 using namespace std;
 
+
+// add one 
+/*
+cublasStatus_t cublasSgemmStridedBatched(cublasHandle_t handle,
+                                  cublasOperation_t transa,
+                                  cublasOperation_t transb,
+                                  int m, int n, int k,
+                                  const float           *alpha,
+                                  const float           *A, int lda,
+                                  long long int          strideA,
+                                  const float           *B, int ldb,
+                                  long long int          strideB,
+                                  const float           *beta,
+                                  float                 *C, int ldc,
+                                  long long int          strideC,
+                                  int batchCount)
+*/
+extern "C" CUBLASAPI cublasStatus_t CUBLASWINAPI cublasSgemmStridedBatched (cublasHandle_t handle,
+                                  cublasOperation_t transa,
+                                  cublasOperation_t transb,
+                                  int m, int n, int k,
+                                  const float           *alpha,
+                                  const float           *A, int lda,
+                                  long long int          strideA,
+                                  const float           *B, int ldb,
+                                  long long int          strideB,
+                                  const float           *beta,
+                                  float                 *C, int ldc,
+                                  long long int          strideC,
+                                  int batchCount){
+    CublasFrontend::Prepare();
+    CublasFrontend::AddVariableForArguments<long long int>((long long int)handle);
+    CublasFrontend::AddVariableForArguments<cublasOperation_t>(transa);
+    CublasFrontend::AddVariableForArguments<cublasOperation_t>(transb);
+    CublasFrontend::AddVariableForArguments<int>(m);
+    CublasFrontend::AddVariableForArguments<int>(n);
+    CublasFrontend::AddVariableForArguments<int>(k);
+    float * _alpha = const_cast<float *>(alpha);
+    CublasFrontend::AddHostPointerForArguments(_alpha);
+    CublasFrontend::AddDevicePointerForArguments(A);
+    CublasFrontend::AddVariableForArguments<int>(lda);
+    CublasFrontend::AddVariableForArguments<long long int>(strideA);
+    CublasFrontend::AddDevicePointerForArguments(B);
+    CublasFrontend::AddVariableForArguments<int>(ldb);
+    CublasFrontend::AddVariableForArguments<long long int>(strideB);
+    float * _beta = const_cast<float *>(beta);
+    CublasFrontend::AddHostPointerForArguments(_beta);
+    CublasFrontend::AddDevicePointerForArguments(C);
+    CublasFrontend::AddVariableForArguments<int>(ldc);
+    CublasFrontend::AddVariableForArguments<long long int>(strideC);
+    CublasFrontend::AddVariableForArguments<int>(batchCount);
+    CublasFrontend::Execute("cublasSgemmStridedBatched_v2");
+    return CublasFrontend::GetExitCode();
+}
+
 extern "C" CUBLASAPI cublasStatus_t CUBLASWINAPI cublasSgemm_v2 (cublasHandle_t handle, 
                                                       cublasOperation_t transa,
                                                       cublasOperation_t transb, 
