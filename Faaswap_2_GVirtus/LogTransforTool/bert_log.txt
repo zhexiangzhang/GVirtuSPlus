@@ -1,0 +1,2493 @@
+[2024-04-06 10:40:41.935366] [debug] Receive API requests 1
+[2024-04-06 10:40:41.935429] [debug] Async: cudaMemcpyAsyncService
+[2024-04-06 10:40:41.935435] [debug] Receive API requests 1
+[2024-04-06 10:40:41.935466] [debug] Response: cudaStreamSynchronizeService
+[2024-04-06 10:40:41.935768] [debug] Receive API requests 1
+[2024-04-06 10:40:41.935816] [debug] Receive API requests 1
+[2024-04-06 10:40:41.935818] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.935998] [debug] Receive API requests 1
+[2024-04-06 10:40:41.936023] [debug] Receive API requests 1
+[2024-04-06 10:40:41.936024] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.936045] [debug] Receive API requests 1
+[2024-04-06 10:40:41.936062] [debug] Receive API requests 1
+[2024-04-06 10:40:41.936063] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.936220] [debug] Receive API requests 1
+[2024-04-06 10:40:41.939324] [debug] Receive API requests 1
+[2024-04-06 10:40:41.939330] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.939335] [debug] Receive API requests 1
+[2024-04-06 10:40:41.939406] [debug] Receive API requests 1
+[2024-04-06 10:40:41.939407] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.939410] [debug] Receive API requests 1
+[2024-04-06 10:40:41.939425] [debug] Receive API requests 1
+[2024-04-06 10:40:41.939426] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.939429] [debug] Receive API requests 1
+[2024-04-06 10:40:41.939469] [debug] Receive API requests 1
+[2024-04-06 10:40:41.939469] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.939472] [debug] Receive API requests 1
+[2024-04-06 10:40:41.939482] [debug] Receive API requests 1
+[2024-04-06 10:40:41.939482] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.939485] [debug] Receive API requests 1
+[2024-04-06 10:40:41.939502] [debug] Receive API requests 1
+[2024-04-06 10:40:41.939503] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.939506] [debug] Receive API requests 1
+[2024-04-06 10:40:41.939524] [debug] Response: [cublas] cublasCreateService
+[2024-04-06 10:40:41.939613] [debug] Receive API requests 1
+[2024-04-06 10:40:41.939619] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.939622] [debug] Receive API requests 1
+[2024-04-06 10:40:41.939624] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.939632] [debug] Receive API requests 1
+[2024-04-06 10:40:41.939637] [debug] Skip unaccessed paramter model 0 ptr 140087473995776
+[2024-04-06 10:40:41.940403] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.940415] [debug] Receive API requests 1
+[2024-04-06 10:40:41.940459] [debug] Receive API requests 1
+[2024-04-06 10:40:41.940460] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.940463] [debug] Receive API requests 1
+[2024-04-06 10:40:41.940465] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.940468] [debug] Receive API requests 1
+[2024-04-06 10:40:41.940469] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.940472] [debug] Receive API requests 1
+[2024-04-06 10:40:41.940475] [debug] Skip unaccessed paramter model 0 ptr 140087478190080
+[2024-04-06 10:40:41.940505] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.940510] [debug] Receive API requests 1
+[2024-04-06 10:40:41.940552] [debug] Receive API requests 1
+[2024-04-06 10:40:41.940553] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.940556] [debug] Receive API requests 1
+[2024-04-06 10:40:41.940557] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.940561] [debug] Receive API requests 1
+[2024-04-06 10:40:41.940561] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.940565] [debug] Receive API requests 1
+[2024-04-06 10:40:41.940567] [debug] Skip unaccessed paramter model 0 ptr 140087482384384
+[2024-04-06 10:40:41.940635] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.940642] [debug] Receive API requests 1
+[2024-04-06 10:40:41.940677] [debug] Receive API requests 1
+[2024-04-06 10:40:41.940678] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.940681] [debug] Receive API requests 1
+[2024-04-06 10:40:41.940682] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.940685] [debug] Receive API requests 1
+[2024-04-06 10:40:41.940700] [debug] Response: cudaStreamIsCapturingService
+[2024-04-06 10:40:41.940778] [debug] Receive API requests 1
+[2024-04-06 10:40:41.940796] [debug] Response: cudaMallocService
+[2024-04-06 10:40:41.940871] [debug] Receive API requests 1
+[2024-04-06 10:40:41.940872] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.940876] [debug] Receive API requests 1
+[2024-04-06 10:40:41.940877] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.940880] [debug] Receive API requests 1
+[2024-04-06 10:40:41.940923] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.940927] [debug] Receive API requests 1
+[2024-04-06 10:40:41.940928] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.940931] [debug] Receive API requests 1
+[2024-04-06 10:40:41.940937] [debug] Response: cudaStreamIsCapturingService
+[2024-04-06 10:40:41.940992] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941000] [debug] Response: cudaMallocService
+[2024-04-06 10:40:41.941064] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941084] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941085] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.941099] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941154] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941154] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.941158] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941172] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941172] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.941207] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941208] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.941211] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941212] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.941215] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941244] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.941296] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941312] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941313] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.941315] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941316] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.941355] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941355] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.941358] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941359] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.941362] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941364] [debug] Skip unaccessed paramter model 0 ptr 140087486578688
+[2024-04-06 10:40:41.941389] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.941393] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941450] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941451] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.941454] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941466] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941467] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.941470] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941484] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941485] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.941628] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941629] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.941632] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941633] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.941655] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941657] [debug] Skip unaccessed paramter model 0 ptr 140088008769536
+[2024-04-06 10:40:41.941675] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.941681] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941730] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941731] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.941735] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941751] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941752] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.941755] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941756] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.941759] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941760] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.941763] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941765] [debug] Skip unaccessed paramter model 0 ptr 140088025546752
+[2024-04-06 10:40:41.941788] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.941792] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941829] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941830] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.941833] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941843] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941844] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.941847] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941859] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941860] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.941907] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941908] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.941911] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941912] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.941915] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941917] [debug] Skip unaccessed paramter model 0 ptr 140087513841664
+[2024-04-06 10:40:41.941936] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.941941] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941987] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941988] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.941991] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941992] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.941995] [debug] Receive API requests 1
+[2024-04-06 10:40:41.941996] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.941999] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942001] [debug] Skip unaccessed paramter model 0 ptr 140087518035968
+[2024-04-06 10:40:41.942019] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.942024] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942071] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942073] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.942076] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942077] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.942080] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942081] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.942084] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942086] [debug] Skip unaccessed paramter model 0 ptr 140087522230272
+[2024-04-06 10:40:41.942105] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.942110] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942151] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942152] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.942155] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942156] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.942159] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942160] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.942163] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942183] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.942200] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942213] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942214] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.942217] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942260] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942261] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.942264] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942275] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942276] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.942279] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942280] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.942283] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942283] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.942286] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942304] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.942309] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942322] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942323] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.942325] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942326] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.942329] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942330] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.942333] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942334] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.942337] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942339] [debug] Skip unaccessed paramter model 0 ptr 140087526424576
+[2024-04-06 10:40:41.942360] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.942366] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942403] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942404] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.942408] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942418] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942419] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.942422] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942435] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942436] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.942507] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942508] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.942511] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942512] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.942515] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942517] [debug] Skip unaccessed paramter model 0 ptr 140088042323968
+[2024-04-06 10:40:41.942530] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.942535] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942573] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942573] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.942576] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942587] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942587] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.942590] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942591] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.942594] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942595] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.942598] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942600] [debug] Skip unaccessed paramter model 0 ptr 140088059101184
+[2024-04-06 10:40:41.942618] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.942623] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942657] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942658] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.942662] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942671] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942672] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.942686] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942698] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942699] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.942717] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942718] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.942721] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942722] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.942725] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942727] [debug] Skip unaccessed paramter model 0 ptr 140087530618880
+[2024-04-06 10:40:41.942750] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.942756] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942793] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942794] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.942797] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942798] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.942801] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942802] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.942805] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942807] [debug] Skip unaccessed paramter model 0 ptr 140087534813184
+[2024-04-06 10:40:41.942825] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.942830] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942867] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942868] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.942871] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942872] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.942875] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942875] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.942879] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942880] [debug] Skip unaccessed paramter model 0 ptr 140087539007488
+[2024-04-06 10:40:41.942897] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.942902] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942937] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942938] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.942940] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942941] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.942944] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942945] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.942948] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942966] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.942970] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942981] [debug] Receive API requests 1
+[2024-04-06 10:40:41.942982] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.942985] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943020] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943021] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.943024] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943047] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943048] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.943051] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943052] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.943055] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943056] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.943059] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943076] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.943081] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943093] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943094] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.943097] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943097] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.943100] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943101] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.943115] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943117] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.943121] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943123] [debug] Skip unaccessed paramter model 0 ptr 140087543201792
+[2024-04-06 10:40:41.943148] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.943154] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943192] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943193] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.943196] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943206] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943206] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.943209] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943222] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943223] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.943287] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943288] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.943291] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943292] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.943295] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943297] [debug] Skip unaccessed paramter model 0 ptr 140088075878400
+[2024-04-06 10:40:41.943312] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.943316] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943353] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943354] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.943357] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943367] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943368] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.943371] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943372] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.943375] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943376] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.943378] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943380] [debug] Skip unaccessed paramter model 0 ptr 140088092655616
+[2024-04-06 10:40:41.943399] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.943404] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943438] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943439] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.943442] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943452] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943453] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.943456] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943468] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943469] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.943504] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943505] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.943508] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943508] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.943511] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943513] [debug] Skip unaccessed paramter model 0 ptr 140087547396096
+[2024-04-06 10:40:41.943530] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.943535] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943573] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943574] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.943577] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943578] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.943581] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943581] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.943584] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943586] [debug] Skip unaccessed paramter model 0 ptr 140087551590400
+[2024-04-06 10:40:41.943603] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.943608] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943655] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943656] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.943659] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943660] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.943663] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943664] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.943667] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943669] [debug] Skip unaccessed paramter model 0 ptr 140087555784704
+[2024-04-06 10:40:41.943688] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.943692] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943728] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943729] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.943733] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943734] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.943739] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943740] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.943743] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943761] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.943765] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943778] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943779] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.943782] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943816] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943817] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.943820] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943831] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943832] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.943834] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943835] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.943838] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943839] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.943842] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943859] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.943863] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943875] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943876] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.943879] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943879] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.943882] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943883] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.943886] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943887] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.943890] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943892] [debug] Skip unaccessed paramter model 0 ptr 140087559979008
+[2024-04-06 10:40:41.943911] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.943916] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943952] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943953] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.943956] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943966] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943967] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.943970] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943982] [debug] Receive API requests 1
+[2024-04-06 10:40:41.943983] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.944053] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944054] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.944057] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944058] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.944061] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944063] [debug] Skip unaccessed paramter model 0 ptr 140088109432832
+[2024-04-06 10:40:41.944078] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.944095] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944135] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944137] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.944141] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944152] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944153] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.944156] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944157] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.944160] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944161] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.944164] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944166] [debug] Skip unaccessed paramter model 0 ptr 140088126210048
+[2024-04-06 10:40:41.944187] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.944192] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944228] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944233] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.944237] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944247] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944248] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.944251] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944263] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944263] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.944276] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944277] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.944280] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944281] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.944284] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944286] [debug] Skip unaccessed paramter model 0 ptr 140087564173312
+[2024-04-06 10:40:41.944305] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.944310] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944347] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944348] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.944351] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944352] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.944355] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944356] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.944359] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944360] [debug] Skip unaccessed paramter model 0 ptr 140087568367616
+[2024-04-06 10:40:41.944378] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.944383] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944419] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944420] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.944423] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944424] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.944427] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944428] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.944431] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944432] [debug] Skip unaccessed paramter model 0 ptr 140087572561920
+[2024-04-06 10:40:41.944450] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.944454] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944490] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944491] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.944494] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944495] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.944498] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944498] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.944501] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944519] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.944523] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944533] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944534] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.944548] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944583] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944584] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.944588] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944599] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944599] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.944602] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944603] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.944606] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944607] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.944610] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944641] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.944646] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944659] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944660] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.944663] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944664] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.944666] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944667] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.944670] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944671] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.944674] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944676] [debug] Skip unaccessed paramter model 0 ptr 140087576756224
+[2024-04-06 10:40:41.944697] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.944702] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944743] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944744] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.944747] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944757] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944758] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.944761] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944773] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944774] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.944831] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944831] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.944835] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944835] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.944838] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944840] [debug] Skip unaccessed paramter model 0 ptr 140087580950528
+[2024-04-06 10:40:41.944854] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.944859] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944896] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944897] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.944900] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944910] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944911] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.944914] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944915] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.944918] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944918] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.944921] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944923] [debug] Skip unaccessed paramter model 0 ptr 140088545640448
+[2024-04-06 10:40:41.944941] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.944946] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944982] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944983] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.944986] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944995] [debug] Receive API requests 1
+[2024-04-06 10:40:41.944996] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.945009] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945020] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945021] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.945062] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945063] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.945066] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945067] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.945070] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945072] [debug] Skip unaccessed paramter model 0 ptr 140089082511360
+[2024-04-06 10:40:41.945094] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.945099] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945142] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945143] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.945146] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945147] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.945151] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945151] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.945155] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945156] [debug] Skip unaccessed paramter model 0 ptr 140089086705664
+[2024-04-06 10:40:41.945175] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.945180] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945216] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945217] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.945220] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945221] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.945224] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945225] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.945232] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945234] [debug] Skip unaccessed paramter model 0 ptr 140089090899968
+[2024-04-06 10:40:41.945253] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.945258] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945294] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945295] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.945298] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945299] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.945302] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945303] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.945306] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945324] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.945328] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945339] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945340] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.945344] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945378] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945379] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.945382] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945392] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945393] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.945396] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945397] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.945400] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945401] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.945404] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945419] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.945424] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945435] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945436] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.945439] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945439] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.945442] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945443] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.945446] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945447] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.945461] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945463] [debug] Skip unaccessed paramter model 0 ptr 140089095094272
+[2024-04-06 10:40:41.945484] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.945489] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945527] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945528] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.945531] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945540] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945541] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.945544] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945556] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945557] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.945601] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945602] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.945605] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945606] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.945609] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945610] [debug] Skip unaccessed paramter model 0 ptr 140088562417664
+[2024-04-06 10:40:41.945624] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.945629] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945664] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945665] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.945668] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945678] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945679] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.945682] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945683] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.945686] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945687] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.945690] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945691] [debug] Skip unaccessed paramter model 0 ptr 140088579194880
+[2024-04-06 10:40:41.945710] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.945715] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945754] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945755] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.945758] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945767] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945768] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.945771] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945783] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945783] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.945809] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945810] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.945813] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945814] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.945817] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945818] [debug] Skip unaccessed paramter model 0 ptr 140089099288576
+[2024-04-06 10:40:41.945838] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.945843] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945880] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945881] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.945884] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945885] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.945888] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945888] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.945892] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945893] [debug] Skip unaccessed paramter model 0 ptr 140089103482880
+[2024-04-06 10:40:41.945911] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.945916] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945952] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945953] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.945956] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945967] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.945970] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945971] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.945975] [debug] Receive API requests 1
+[2024-04-06 10:40:41.945976] [debug] Skip unaccessed paramter model 0 ptr 140089107677184
+[2024-04-06 10:40:41.945996] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.946001] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946048] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946049] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.946052] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946053] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.946056] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946057] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.946060] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946077] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.946081] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946093] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946094] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.946097] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946134] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946136] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.946140] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946152] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946153] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.946156] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946157] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.946160] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946160] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.946164] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946181] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.946185] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946197] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946198] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.946201] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946201] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.946204] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946205] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.946208] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946209] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.946212] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946214] [debug] Skip unaccessed paramter model 0 ptr 140089111871488
+[2024-04-06 10:40:41.946237] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.946243] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946279] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946280] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.946283] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946292] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946293] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.946296] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946307] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946308] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.946366] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946367] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.946370] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946371] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.946374] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946376] [debug] Skip unaccessed paramter model 0 ptr 140088595972096
+[2024-04-06 10:40:41.946389] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.946394] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946431] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946432] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.946446] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946457] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946458] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.946461] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946462] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.946465] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946466] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.946469] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946471] [debug] Skip unaccessed paramter model 0 ptr 140088612749312
+[2024-04-06 10:40:41.946491] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.946496] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946532] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946533] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.946537] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946546] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946547] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.946550] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946561] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946562] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.946573] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946574] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.946577] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946578] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.946581] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946583] [debug] Skip unaccessed paramter model 0 ptr 140089116065792
+[2024-04-06 10:40:41.946601] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.946606] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946641] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946642] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.946645] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946646] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.946649] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946650] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.946653] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946654] [debug] Skip unaccessed paramter model 0 ptr 140089120260096
+[2024-04-06 10:40:41.946672] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.946677] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946713] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946714] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.946716] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946717] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.946720] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946721] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.946724] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946726] [debug] Skip unaccessed paramter model 0 ptr 140089124454400
+[2024-04-06 10:40:41.946747] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.946753] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946791] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946791] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.946794] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946795] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.946798] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946799] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.946802] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946819] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.946823] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946834] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946834] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.946838] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946873] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946874] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.946887] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946898] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946899] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.946902] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946903] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.946906] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946906] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.946909] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946926] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.946930] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946943] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946944] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.946947] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946948] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.946950] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946951] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.946954] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946955] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.946958] [debug] Receive API requests 1
+[2024-04-06 10:40:41.946960] [debug] Skip unaccessed paramter model 0 ptr 140089128648704
+[2024-04-06 10:40:41.946979] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.946984] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947020] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947021] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.947024] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947043] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947044] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.947047] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947059] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947060] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.947113] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947114] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.947117] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947118] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.947121] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947123] [debug] Skip unaccessed paramter model 0 ptr 140088629526528
+[2024-04-06 10:40:41.947140] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.947146] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947183] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947184] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.947187] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947197] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947198] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.947200] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947201] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.947204] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947205] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.947208] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947210] [debug] Skip unaccessed paramter model 0 ptr 140088646303744
+[2024-04-06 10:40:41.947234] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.947239] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947276] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947277] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.947280] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947289] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947290] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.947293] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947305] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947306] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.947337] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947338] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.947355] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947356] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.947366] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947368] [debug] Skip unaccessed paramter model 0 ptr 140089132843008
+[2024-04-06 10:40:41.947389] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.947395] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947433] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947434] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.947437] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947438] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.947441] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947442] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.947445] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947446] [debug] Skip unaccessed paramter model 0 ptr 140089137037312
+[2024-04-06 10:40:41.947464] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.947468] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947505] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947506] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.947508] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947509] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.947512] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947513] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.947516] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947518] [debug] Skip unaccessed paramter model 0 ptr 140089141231616
+[2024-04-06 10:40:41.947535] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.947540] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947575] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947576] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.947579] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947579] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.947582] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947583] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.947586] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947604] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.947608] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947618] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947619] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.947623] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947657] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947658] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.947661] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947672] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947673] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.947676] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947677] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.947680] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947681] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.947684] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947699] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.947704] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947715] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947716] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.947719] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947719] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.947722] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947723] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.947726] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947727] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.947731] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947733] [debug] Skip unaccessed paramter model 0 ptr 140089145425920
+[2024-04-06 10:40:41.947755] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.947771] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947809] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947810] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.947813] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947822] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947823] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.947826] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947839] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947839] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.947860] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947861] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.947863] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947864] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.947867] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947869] [debug] Skip unaccessed paramter model 0 ptr 140089149620224
+[2024-04-06 10:40:41.947884] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.947888] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947924] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947925] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.947928] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947937] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947938] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.947958] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947959] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.947962] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947962] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.947965] [debug] Receive API requests 1
+[2024-04-06 10:40:41.947967] [debug] Skip unaccessed paramter model 0 ptr 140088663080960
+[2024-04-06 10:40:41.947986] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.947991] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948025] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948026] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.948039] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948049] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948050] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.948053] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948065] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948066] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.948093] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948094] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.948097] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948098] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.948101] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948103] [debug] Skip unaccessed paramter model 0 ptr 140089166397440
+[2024-04-06 10:40:41.948122] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.948127] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948168] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948169] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.948172] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948173] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.948176] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948177] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.948180] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948182] [debug] Skip unaccessed paramter model 0 ptr 140089170591744
+[2024-04-06 10:40:41.948201] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.948205] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948247] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948248] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.948250] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948251] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.948254] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948269] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.948273] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948275] [debug] Skip unaccessed paramter model 0 ptr 140089174786048
+[2024-04-06 10:40:41.948295] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.948300] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948336] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948337] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.948340] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948341] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.948344] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948345] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.948348] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948365] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.948369] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948381] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948382] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.948386] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948420] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948421] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.948424] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948434] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948434] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.948437] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948438] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.948441] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948442] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.948445] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948461] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.948466] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948477] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948478] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.948481] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948482] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.948485] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948485] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.948488] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948489] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.948492] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948494] [debug] Skip unaccessed paramter model 0 ptr 140089178980352
+[2024-04-06 10:40:41.948512] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.948517] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948554] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948555] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.948558] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948567] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948568] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.948571] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948583] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948583] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.948643] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948644] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.948647] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948648] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.948657] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948658] [debug] Skip unaccessed paramter model 0 ptr 140089619382272
+[2024-04-06 10:40:41.948673] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.948678] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948714] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948715] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.948718] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948728] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948729] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.948747] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948748] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.948752] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948753] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.948756] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948758] [debug] Skip unaccessed paramter model 0 ptr 140089636159488
+[2024-04-06 10:40:41.948780] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.948784] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948820] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948821] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.948824] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948833] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948834] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.948837] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948848] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948849] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.948873] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948874] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.948877] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948878] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.948881] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948882] [debug] Skip unaccessed paramter model 0 ptr 140089183174656
+[2024-04-06 10:40:41.948902] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.948906] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948942] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948943] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.948946] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948947] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.948950] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948950] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.948954] [debug] Receive API requests 1
+[2024-04-06 10:40:41.948955] [debug] Skip unaccessed paramter model 0 ptr 140089187368960
+[2024-04-06 10:40:41.948974] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.948979] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949015] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949016] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.949018] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949019] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.949022] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949023] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.949026] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949028] [debug] Skip unaccessed paramter model 0 ptr 140089191563264
+[2024-04-06 10:40:41.949056] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.949062] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949098] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949100] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.949103] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949104] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.949107] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949108] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.949111] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949129] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.949134] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949148] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949149] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.949153] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949188] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949189] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.949192] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949202] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949203] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.949216] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949218] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.949221] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949221] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.949225] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949247] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.949252] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949265] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949266] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.949269] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949269] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.949272] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949273] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.949276] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949277] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.949280] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949282] [debug] Skip unaccessed paramter model 0 ptr 140089195757568
+[2024-04-06 10:40:41.949302] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.949307] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949343] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949344] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.949347] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949357] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949358] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.949361] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949372] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949373] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.949419] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949420] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.949423] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949423] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.949426] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949428] [debug] Skip unaccessed paramter model 0 ptr 140089652936704
+[2024-04-06 10:40:41.949441] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.949446] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949482] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949483] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.949486] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949496] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949497] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.949500] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949501] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.949504] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949504] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.949507] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949509] [debug] Skip unaccessed paramter model 0 ptr 140089669713920
+[2024-04-06 10:40:41.949526] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.949531] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949566] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949567] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.949570] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949580] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949580] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.949584] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949595] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949595] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.949624] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949625] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.949628] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949629] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.949632] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949643] [debug] Skip unaccessed paramter model 0 ptr 140089199951872
+[2024-04-06 10:40:41.949663] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.949669] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949706] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949707] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.949710] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949711] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.949714] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949715] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.949718] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949719] [debug] Skip unaccessed paramter model 0 ptr 140089204146176
+[2024-04-06 10:40:41.949740] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.949745] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949780] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949781] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.949784] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949785] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.949788] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949789] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.949792] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949794] [debug] Skip unaccessed paramter model 0 ptr 140090156253184
+[2024-04-06 10:40:41.949812] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.949817] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949853] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949854] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.949857] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949857] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.949861] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949861] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.949864] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949881] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.949885] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949896] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949897] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.949900] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949934] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949935] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.949938] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949948] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949949] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.949952] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949952] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.949955] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949956] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.949959] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949974] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.949979] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949991] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949992] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.949995] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949995] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.949998] [debug] Receive API requests 1
+[2024-04-06 10:40:41.949999] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.950002] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950003] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.950006] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950008] [debug] Skip unaccessed paramter model 0 ptr 140090160447488
+[2024-04-06 10:40:41.950027] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.950041] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950077] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950078] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.950093] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950103] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950104] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.950108] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950121] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950122] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.950162] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950164] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.950167] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950168] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.950171] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950172] [debug] Skip unaccessed paramter model 0 ptr 140089686491136
+[2024-04-06 10:40:41.950187] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.950192] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950232] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950233] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.950237] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950247] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950248] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.950250] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950251] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.950254] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950255] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.950258] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950260] [debug] Skip unaccessed paramter model 0 ptr 140089703268352
+[2024-04-06 10:40:41.950280] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.950286] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950321] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950322] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.950325] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950335] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950336] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.950339] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950350] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950351] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.950380] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950381] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.950384] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950385] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.950388] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950390] [debug] Skip unaccessed paramter model 0 ptr 140090164641792
+[2024-04-06 10:40:41.950408] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.950413] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950450] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950451] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.950453] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950454] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.950457] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950458] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.950461] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950463] [debug] Skip unaccessed paramter model 0 ptr 140090168836096
+[2024-04-06 10:40:41.950480] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.950485] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950521] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950522] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.950525] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950526] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.950529] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950529] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.950532] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950534] [debug] Skip unaccessed paramter model 0 ptr 140090173030400
+[2024-04-06 10:40:41.950564] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.950570] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950607] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950608] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.950611] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950611] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.950614] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950615] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.950618] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950636] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.950640] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950651] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950651] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.950655] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950690] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950691] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.950694] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950704] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950705] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.950707] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950708] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.950711] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950712] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.950715] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950732] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.950738] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950749] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950750] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.950753] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950753] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.950756] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950757] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.950760] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950761] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.950764] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950766] [debug] Skip unaccessed paramter model 0 ptr 140090177224704
+[2024-04-06 10:40:41.950785] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.950789] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950825] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950826] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.950829] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950838] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950839] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.950842] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950854] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950855] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.950904] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950904] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.950907] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950908] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.950911] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950913] [debug] Skip unaccessed paramter model 0 ptr 140090181419008
+[2024-04-06 10:40:41.950926] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.950931] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950967] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950968] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.950971] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950980] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950981] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.950995] [debug] Receive API requests 1
+[2024-04-06 10:40:41.950996] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.950999] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951009] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.951013] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951015] [debug] Skip unaccessed paramter model 0 ptr 140089720045568
+[2024-04-06 10:40:41.951045] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.951051] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951088] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951089] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.951092] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951101] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951103] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.951106] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951118] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951119] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.951128] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951130] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.951134] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951136] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.951140] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951143] [debug] Skip unaccessed paramter model 0 ptr 140090198196224
+[2024-04-06 10:40:41.951163] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.951168] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951204] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951205] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.951208] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951209] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.951212] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951213] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.951216] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951217] [debug] Skip unaccessed paramter model 0 ptr 140090202390528
+[2024-04-06 10:40:41.951240] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.951244] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951281] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951282] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.951285] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951286] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.951289] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951290] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.951293] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951295] [debug] Skip unaccessed paramter model 0 ptr 140090206584832
+[2024-04-06 10:40:41.951313] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.951318] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951354] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951354] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.951357] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951358] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.951361] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951362] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.951365] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951382] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.951386] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951397] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951397] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.951401] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951436] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951437] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.951440] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951450] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951451] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.951454] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951454] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.951457] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951469] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.951472] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951489] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.951494] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951507] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951508] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.951511] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951511] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.951514] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951515] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.951518] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951519] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.951522] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951523] [debug] Skip unaccessed paramter model 0 ptr 140090210779136
+[2024-04-06 10:40:41.951543] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.951547] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951584] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951585] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.951588] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951598] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951598] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.951601] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951613] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951614] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.951654] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951655] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.951658] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951659] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.951662] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951663] [debug] Skip unaccessed paramter model 0 ptr 140089736822784
+[2024-04-06 10:40:41.951677] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.951681] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951718] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951719] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.951722] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951733] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951734] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.951739] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951740] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.951743] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951744] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.951747] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951749] [debug] Skip unaccessed paramter model 0 ptr 140090693124096
+[2024-04-06 10:40:41.951768] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.951773] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951809] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951809] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.951813] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951822] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951823] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.951826] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951837] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951838] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.951860] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951861] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.951864] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951865] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.951868] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951869] [debug] Skip unaccessed paramter model 0 ptr 140090214973440
+[2024-04-06 10:40:41.951888] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.951893] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951941] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951942] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.951945] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951946] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.951949] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951950] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.951953] [debug] Receive API requests 1
+[2024-04-06 10:40:41.951954] [debug] Skip unaccessed paramter model 0 ptr 140090219167744
+[2024-04-06 10:40:41.951973] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.951978] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952015] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952016] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.952018] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952019] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.952023] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952023] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.952026] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952028] [debug] Skip unaccessed paramter model 0 ptr 140090223362048
+[2024-04-06 10:40:41.952056] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.952061] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952098] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952099] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.952102] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952103] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.952106] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952107] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.952110] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952127] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.952131] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952146] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952147] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.952151] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952187] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952188] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.952191] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952201] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952201] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.952204] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952205] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.952208] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952209] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.952212] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952233] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.952237] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952249] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952250] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.952253] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952253] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.952256] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952257] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.952260] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952261] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.952264] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952266] [debug] Skip unaccessed paramter model 0 ptr 140090227556352
+[2024-04-06 10:40:41.952285] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.952290] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952325] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952326] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.952329] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952338] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952339] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.952353] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952366] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952366] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.952414] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952415] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.952418] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952419] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.952422] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952423] [debug] Skip unaccessed paramter model 0 ptr 140090709901312
+[2024-04-06 10:40:41.952437] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.952442] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952478] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952478] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.952482] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952492] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952493] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.952496] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952497] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.952500] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952501] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.952504] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952505] [debug] Skip unaccessed paramter model 0 ptr 140090726678528
+[2024-04-06 10:40:41.952523] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.952527] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952563] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952564] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.952567] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952577] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952577] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.952580] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952592] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952593] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.952617] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952618] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.952632] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952633] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.952636] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952638] [debug] Skip unaccessed paramter model 0 ptr 140090231750656
+[2024-04-06 10:40:41.952657] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.952662] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952699] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952700] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.952702] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952703] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.952706] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952707] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.952710] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952712] [debug] Skip unaccessed paramter model 0 ptr 140090235944960
+[2024-04-06 10:40:41.952729] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.952735] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952773] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952774] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.952777] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952778] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.952781] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952781] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.952784] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952786] [debug] Skip unaccessed paramter model 0 ptr 140090240139264
+[2024-04-06 10:40:41.952805] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.952810] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952845] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952857] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.952861] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952862] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.952865] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952865] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.952869] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952888] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.952892] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952903] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952904] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.952908] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952942] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952943] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.952947] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952956] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952956] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.952959] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952960] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.952963] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952964] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.952967] [debug] Receive API requests 1
+[2024-04-06 10:40:41.952983] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.952987] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953000] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953001] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.953003] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953004] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.953007] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953008] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.953011] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953011] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.953014] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953016] [debug] Skip unaccessed paramter model 0 ptr 140090244333568
+[2024-04-06 10:40:41.953045] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.953050] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953088] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953089] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.953092] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953102] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953102] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.953105] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953117] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953118] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.953177] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953179] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.953182] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953183] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.953186] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953188] [debug] Skip unaccessed paramter model 0 ptr 140090743455744
+[2024-04-06 10:40:41.953204] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.953208] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953250] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953251] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.953254] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953263] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953264] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.953267] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953268] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.953271] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953271] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.953274] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953287] [debug] Skip unaccessed paramter model 0 ptr 140090760232960
+[2024-04-06 10:40:41.953308] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.953313] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953350] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953351] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.953354] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953363] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953364] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.953367] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953380] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953380] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.953397] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953398] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.953401] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953402] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.953405] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953406] [debug] Skip unaccessed paramter model 0 ptr 140090248527872
+[2024-04-06 10:40:41.953425] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.953430] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953467] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953468] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.953471] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953472] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.953475] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953475] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.953479] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953480] [debug] Skip unaccessed paramter model 0 ptr 140090252722176
+[2024-04-06 10:40:41.953498] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.953503] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953538] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953539] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.953542] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953543] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.953546] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953547] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.953550] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953552] [debug] Skip unaccessed paramter model 0 ptr 140090256916480
+[2024-04-06 10:40:41.953570] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.953574] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953610] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953611] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.953613] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953614] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.953617] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953618] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.953621] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953638] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.953641] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953652] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953653] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.953656] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953691] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953692] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.953695] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953705] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953706] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.953709] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953710] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.953713] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953714] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.953717] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953746] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.953752] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953765] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953766] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.953768] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953769] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.953772] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953773] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.953776] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953777] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.953780] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953782] [debug] Skip unaccessed paramter model 0 ptr 140090261110784
+[2024-04-06 10:40:41.953801] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.953806] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953843] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953844] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.953847] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953856] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953857] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.953860] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953872] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953873] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.953913] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953913] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.953917] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953917] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.953920] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953922] [debug] Skip unaccessed paramter model 0 ptr 140090265305088
+[2024-04-06 10:40:41.953935] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.953939] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953974] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953975] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.953978] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953988] [debug] Receive API requests 1
+[2024-04-06 10:40:41.953989] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.954006] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954006] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.954010] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954010] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.954013] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954015] [debug] Skip unaccessed paramter model 0 ptr 140090777010176
+[2024-04-06 10:40:41.954042] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.954047] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954084] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954086] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.954089] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954099] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954100] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.954104] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954115] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954117] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.954137] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954138] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.954143] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954144] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.954148] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954149] [debug] Skip unaccessed paramter model 0 ptr 140091229995008
+[2024-04-06 10:40:41.954170] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.954175] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954212] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954213] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.954216] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954234] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.954238] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954239] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.954249] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954251] [debug] Skip unaccessed paramter model 0 ptr 140091234189312
+[2024-04-06 10:40:41.954272] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.954278] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954316] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954318] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.954321] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954322] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.954325] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954326] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.954329] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954330] [debug] Skip unaccessed paramter model 0 ptr 140091238383616
+[2024-04-06 10:40:41.954348] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.954353] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954389] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954391] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.954393] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954394] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.954398] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954398] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.954402] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954419] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.954424] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954436] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954437] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.954441] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954476] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954478] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.954481] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954491] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954493] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.954496] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954497] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.954500] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954501] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.954504] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954519] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.954524] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954536] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954537] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.954540] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954541] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.954544] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954545] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.954548] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954549] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.954552] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954554] [debug] Skip unaccessed paramter model 0 ptr 140091242577920
+[2024-04-06 10:40:41.954573] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.954578] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954614] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954616] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.954619] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954629] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954630] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.954633] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954646] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954648] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.954673] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954674] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.954677] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954678] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.954681] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954683] [debug] Skip unaccessed paramter model 0 ptr 140090793787392
+[2024-04-06 10:40:41.954697] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.954702] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954741] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954742] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.954745] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954756] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954757] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.954759] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954760] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.954763] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954764] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.954767] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954769] [debug] Skip unaccessed paramter model 0 ptr 140090810564608
+[2024-04-06 10:40:41.954788] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.954793] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954828] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954829] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.954833] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954843] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954844] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.954847] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954859] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954860] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.954881] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954882] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.954885] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954886] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.954889] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954891] [debug] Skip unaccessed paramter model 0 ptr 140091246772224
+[2024-04-06 10:40:41.954909] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.954914] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954951] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954952] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.954954] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954955] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.954958] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954959] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.954962] [debug] Receive API requests 1
+[2024-04-06 10:40:41.954964] [debug] Skip unaccessed paramter model 0 ptr 140091250966528
+[2024-04-06 10:40:41.954982] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.954986] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955023] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955024] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.955026] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955027] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.955040] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955041] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.955044] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955046] [debug] Skip unaccessed paramter model 0 ptr 140091255160832
+[2024-04-06 10:40:41.955064] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.955069] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955104] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955105] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.955108] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955109] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.955124] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955125] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.955128] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955152] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.955157] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955167] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955168] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.955172] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955206] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955207] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.955210] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955220] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955220] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.955223] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955224] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.955227] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955228] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.955239] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955256] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.955261] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955273] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955274] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.955277] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955277] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.955280] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955281] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.955284] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955285] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.955288] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955290] [debug] Skip unaccessed paramter model 0 ptr 140091259355136
+[2024-04-06 10:40:41.955311] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.955316] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955353] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955354] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.955357] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955366] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955367] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.955370] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955381] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955382] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.955429] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955430] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.955433] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955434] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.955437] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955439] [debug] Skip unaccessed paramter model 0 ptr 140091766865920
+[2024-04-06 10:40:41.955452] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.955457] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955492] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955493] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.955496] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955506] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955507] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.955509] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955510] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.955513] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955514] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.955517] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955518] [debug] Skip unaccessed paramter model 0 ptr 140091783643136
+[2024-04-06 10:40:41.955537] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.955542] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955590] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955591] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.955594] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955604] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955605] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.955607] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955619] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955620] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.955635] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955636] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.955639] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955640] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.955642] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955644] [debug] Skip unaccessed paramter model 0 ptr 140091263549440
+[2024-04-06 10:40:41.955663] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.955668] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955705] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955706] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.955709] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955709] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.955712] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955713] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.955716] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955718] [debug] Skip unaccessed paramter model 0 ptr 140091267743744
+[2024-04-06 10:40:41.955740] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.955745] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955783] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955784] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.955787] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955788] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.955791] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955792] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.955795] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955796] [debug] Skip unaccessed paramter model 0 ptr 140091271938048
+[2024-04-06 10:40:41.955815] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.955820] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955855] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955856] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.955859] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955860] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.955863] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955864] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.955867] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955883] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.955887] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955897] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955897] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.955901] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955938] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955939] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.955942] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955951] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955952] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.955955] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955956] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.955959] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955959] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.955962] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955977] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.955982] [debug] Receive API requests 1
+[2024-04-06 10:40:41.955994] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956004] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.956007] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956008] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.956011] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956012] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.956015] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956016] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.956019] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956021] [debug] Skip unaccessed paramter model 0 ptr 140091276132352
+[2024-04-06 10:40:41.956050] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.956056] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956093] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956094] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.956097] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956107] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956108] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.956111] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956122] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956123] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.956167] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956168] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.956171] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956172] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.956175] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956177] [debug] Skip unaccessed paramter model 0 ptr 140091800420352
+[2024-04-06 10:40:41.956191] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.956196] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956238] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956240] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.956243] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956253] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956254] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.956256] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956257] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.956260] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956261] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.956264] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956266] [debug] Skip unaccessed paramter model 0 ptr 140091817197568
+[2024-04-06 10:40:41.956284] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.956289] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956325] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956326] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.956329] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956338] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956339] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.956342] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956353] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956354] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.956389] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956390] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.956393] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956394] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.956397] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956398] [debug] Skip unaccessed paramter model 0 ptr 140091280326656
+[2024-04-06 10:40:41.956417] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.956422] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956458] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956459] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.956462] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956463] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.956465] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956466] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.956480] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956482] [debug] Skip unaccessed paramter model 0 ptr 140091284520960
+[2024-04-06 10:40:41.956501] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.956506] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956545] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956546] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.956548] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956549] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.956552] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956553] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.956556] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956558] [debug] Skip unaccessed paramter model 0 ptr 140091288715264
+[2024-04-06 10:40:41.956575] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.956580] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956617] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956630] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.956633] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956634] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.956638] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956638] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.956642] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956660] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.956664] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956675] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956676] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.956680] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956715] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956716] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.956719] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956729] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956730] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.956734] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956735] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.956740] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956741] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.956744] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956761] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.956766] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956777] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956778] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.956780] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956781] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.956784] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956785] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.956788] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956789] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.956792] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956794] [debug] Skip unaccessed paramter model 0 ptr 140091292909568
+[2024-04-06 10:40:41.956813] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.956818] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956854] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956855] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.956858] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956868] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956869] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.956872] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956883] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956884] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.956938] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956939] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.956942] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956955] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.956958] [debug] Receive API requests 1
+[2024-04-06 10:40:41.956960] [debug] Skip unaccessed paramter model 0 ptr 140091297103872
+[2024-04-06 10:40:41.956974] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.956979] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957016] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957017] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.957020] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957041] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957042] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.957045] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957046] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.957049] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957050] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.957053] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957054] [debug] Skip unaccessed paramter model 0 ptr 140091833974784
+[2024-04-06 10:40:41.957074] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.957078] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957113] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957114] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.957117] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957127] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957128] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.957132] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957148] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957149] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.957152] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957153] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.957156] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957157] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.957160] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957162] [debug] Skip unaccessed paramter model 0 ptr 140091313881088
+[2024-04-06 10:40:41.957180] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.957185] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957222] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957223] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.957226] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957227] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.957234] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957235] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.957238] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957240] [debug] Skip unaccessed paramter model 0 ptr 140091318075392
+[2024-04-06 10:40:41.957258] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.957263] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957299] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957300] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.957303] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957304] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.957307] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957308] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.957311] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957312] [debug] Skip unaccessed paramter model 0 ptr 140091322269696
+[2024-04-06 10:40:41.957330] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.957335] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957370] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957371] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.957374] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957374] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.957377] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957378] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.957392] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957411] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.957415] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957427] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957427] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.957431] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957465] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957466] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.957469] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957479] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957480] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.957483] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957484] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.957487] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957488] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.957491] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957506] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.957511] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957522] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957523] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.957526] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957527] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.957530] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957530] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.957533] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957534] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.957537] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957539] [debug] Skip unaccessed paramter model 0 ptr 140091326464000
+[2024-04-06 10:40:41.957558] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.957564] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957599] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957600] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.957603] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957612] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957613] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.957616] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957628] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957629] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.957679] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957680] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.957683] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957684] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.957687] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957689] [debug] Skip unaccessed paramter model 0 ptr 140091850752000
+[2024-04-06 10:40:41.957702] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.957707] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957746] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957747] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.957750] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957759] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957760] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.957763] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957764] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.957767] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957767] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.957770] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957772] [debug] Skip unaccessed paramter model 0 ptr 140091867529216
+[2024-04-06 10:40:41.957792] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.957796] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957831] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957832] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.957835] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957857] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957858] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.957861] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957873] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957874] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.957892] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957893] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.957896] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957897] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.957900] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957902] [debug] Skip unaccessed paramter model 0 ptr 140091330658304
+[2024-04-06 10:40:41.957921] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.957925] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957962] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957963] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.957966] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957966] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.957969] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957970] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.957973] [debug] Receive API requests 1
+[2024-04-06 10:40:41.957975] [debug] Skip unaccessed paramter model 0 ptr 140091334852608
+[2024-04-06 10:40:41.957993] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.957997] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958043] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958044] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.958047] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958047] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.958050] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958051] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.958054] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958056] [debug] Skip unaccessed paramter model 0 ptr 140091339046912
+[2024-04-06 10:40:41.958076] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.958080] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958116] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958117] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.958120] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958121] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.958124] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958125] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.958128] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958150] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.958154] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958165] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958166] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.958170] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958204] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958205] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.958208] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958218] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958219] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.958222] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958223] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.958226] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958226] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.958234] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958250] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.958255] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958267] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958268] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.958271] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958271] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.958286] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958287] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.958290] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958291] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.958295] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958297] [debug] Skip unaccessed paramter model 0 ptr 140091343241216
+[2024-04-06 10:40:41.958318] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.958323] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958360] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958361] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.958364] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958373] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958374] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.958377] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958388] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958389] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.958433] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958434] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.958437] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958438] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.958441] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958442] [debug] Skip unaccessed paramter model 0 ptr 140091884306432
+[2024-04-06 10:40:41.958456] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.958460] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958496] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958497] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.958500] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958510] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958510] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.958513] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958514] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.958517] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958518] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.958521] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958522] [debug] Skip unaccessed paramter model 0 ptr 140092303736832
+[2024-04-06 10:40:41.958540] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.958545] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958580] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958581] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.958584] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958593] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958594] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.958597] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958608] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958609] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.958634] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958635] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.958638] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958639] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.958642] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958643] [debug] Skip unaccessed paramter model 0 ptr 140091347435520
+[2024-04-06 10:40:41.958661] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.958666] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958701] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958702] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.958705] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958706] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.958709] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958710] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.958713] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958714] [debug] Skip unaccessed paramter model 0 ptr 140091351629824
+[2024-04-06 10:40:41.958746] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.958752] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958789] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958790] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.958793] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958794] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.958797] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958798] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.958801] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958803] [debug] Skip unaccessed paramter model 0 ptr 140092840607744
+[2024-04-06 10:40:41.958821] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.958825] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958861] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958862] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.958865] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958865] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.958868] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958869] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.958872] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958889] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.958893] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958903] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958904] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.958908] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958942] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958943] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.958946] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958956] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958957] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.958960] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958961] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.958963] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958964] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.958967] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958983] [debug] Async: [cublas] cublasSgemmStridedBatchedService
+[2024-04-06 10:40:41.958987] [debug] Receive API requests 1
+[2024-04-06 10:40:41.958999] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959000] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.959003] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959003] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.959006] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959007] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.959010] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959011] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.959014] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959016] [debug] Skip unaccessed paramter model 0 ptr 140092844802048
+[2024-04-06 10:40:41.959043] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.959049] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959085] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959086] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.959090] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959100] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959102] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.959105] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959118] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959119] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.959170] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959172] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.959175] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959175] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.959178] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959180] [debug] Skip unaccessed paramter model 0 ptr 140092320514048
+[2024-04-06 10:40:41.959206] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.959211] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959253] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959254] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.959257] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959267] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959268] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.959271] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959271] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.959275] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959275] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.959279] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959280] [debug] Skip unaccessed paramter model 0 ptr 140092337291264
+[2024-04-06 10:40:41.959300] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.959304] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959340] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959341] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.959344] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959353] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959354] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.959357] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959369] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959369] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.959494] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959495] [debug] Async: [cublas] cublasSetStreamService
+[2024-04-06 10:40:41.959498] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959499] [debug] Async: [cublas] cublasSetMathModeService
+[2024-04-06 10:40:41.959502] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959504] [debug] Skip unaccessed paramter model 0 ptr 140087494172672
+[2024-04-06 10:40:41.959537] [debug] Async: [cublas] cublasSgemmService
+[2024-04-06 10:40:41.959542] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959581] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959582] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.959586] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959597] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959598] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.959600] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959601] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.959611] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959622] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959623] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.959626] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959627] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.959718] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959790] [debug] Receive API requests 1
+[2024-04-06 10:40:41.959791] [debug] Async: cudaGetLastErrorService
+[2024-04-06 10:40:41.959794] [debug] Receive API requests 1

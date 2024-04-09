@@ -1,7 +1,7 @@
 import re
 from collections import Counter
 
-filename = 'log.txt'
+filename = 'cv_cudaLog.txt'
 new_filename = 'cv_cudaLog_filter.txt'
 
 with open(filename, 'r') as file:

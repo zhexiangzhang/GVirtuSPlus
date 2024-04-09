@@ -124,8 +124,12 @@ std::vector<cudnnFilterDescriptor_t> filterDescriptorsVector;
 std::vector<cudnnConvolutionDescriptor_t> convolutionDescriptorsVector;
 
 int n, c, h, w;
-int batch_size = 1, channels = 3, height = 1024, width = 1024;
+// int batch_size = 1, channels = 3, height = 1024, width = 1024;
 int out_channels = 16, kernel_height = 5, kernel_width = 5;
+
+// 设置小的输入、权重和输出张量
+int batch_size = 1, channels = 1, height = 5, width = 5;  // 小尺寸张量
+
 
 const int dimA[3] = {1, 1, 1};
 const int strideA[3] = {3 * 2, 2, 1};
@@ -353,6 +357,8 @@ void cudnnDestroyConvolutionDescriptorService() {
     }
 }
 void cudnnConvolutionForwardService(){
+    void* d_workspace = nullptr;
+
     CHECK_CUDNN(cudnnConvolutionForward(
             handle, &alpha,
             input_descriptor, d_memory,
@@ -450,46 +456,46 @@ void parse(const cudarpc::QueryType &type) {
 //            cudaLaunchKernelService();
 //            break;
 // =========================================================
-        case cudarpc::QueryType::cuBLAS_cublasSetStream:
-            cublasSetStreamService(); // 带一个参数
-            break;
-        case cudarpc::QueryType::cuBLAS_cublasSetMathMode: // 带一个参数
-            cublasSetMathModeService();
-            break;
-        case cudarpc::QueryType::cuBLAS_cublasSgemm: // 计算密集型
-            // 从cublasSgemmVector中取出对应的参数（第cnt个）
-            if (cublasSgemmCount < cublasSgemmVector.size()) {
-                SgemmParam param = cublasSgemmVector[cublasSgemmCount];
-                cublasSgemmCount++;
-                cublasSgemmService(param);
-            }             
-            else 
-                std::cout << "cublasSgemmCount out of range" << std::endl;
-            break;
-        case cudarpc::QueryType::cuBLAS_cublasSgemmStridedBatched: // 计算密集型
-            if (cublasSgemmStridedBatchedCount < cublasSSBVector.size()) {
-                SgemmStridedBatchedParam param = cublasSSBVector[cublasSgemmStridedBatchedCount];
-                cublasSgemmStridedBatchedCount++;
-                cublasSgemmStridedBatchedService(param);
-            }       
-            else 
-                std::cout << "cublasSgemmStridedBatchedCount out of range" << std::endl;
-            break;
-        case cudarpc::QueryType::cudaStreamSynchronize:
-            cudaStreamSynchronizeService(); // 带一个参数
-            break;
-        // case cudarpc::QueryType::cudaStreamIsCapturing:  // 编译不存在，等会应该要解决
-        //     cudaStreamIsCapturingService(); // 忽略参数
+        // case cudarpc::QueryType::cuBLAS_cublasSetStream:
+        //     cublasSetStreamService(); // 带一个参数
         //     break;
-        case cudarpc::QueryType::cudaMemcpyAsync: // 复制的size，以及复制的流，0是默认阻塞流，用户创建的是异步，允许并发
-            cudaMemcpyAsyncService();
-            break;
-        case cudarpc::QueryType::cuBLAS_cublasCreate:
-            cublasCreateService();
-            break;    
+        // case cudarpc::QueryType::cuBLAS_cublasSetMathMode: // 带一个参数
+        //     cublasSetMathModeService();
+        //     break;
+        // case cudarpc::QueryType::cuBLAS_cublasSgemm: // 计算密集型
+        //     // 从cublasSgemmVector中取出对应的参数（第cnt个）
+        //     if (cublasSgemmCount < cublasSgemmVector.size()) {
+        //         SgemmParam param = cublasSgemmVector[cublasSgemmCount];
+        //         cublasSgemmCount++;
+        //         cublasSgemmService(param);
+        //     }             
+        //     else 
+        //         std::cout << "cublasSgemmCount out of range" << std::endl;
+        //     break;
+        // case cudarpc::QueryType::cuBLAS_cublasSgemmStridedBatched: // 计算密集型
+        //     if (cublasSgemmStridedBatchedCount < cublasSSBVector.size()) {
+        //         SgemmStridedBatchedParam param = cublasSSBVector[cublasSgemmStridedBatchedCount];
+        //         cublasSgemmStridedBatchedCount++;
+        //         cublasSgemmStridedBatchedService(param);
+        //     }       
+        //     else 
+        //         std::cout << "cublasSgemmStridedBatchedCount out of range" << std::endl;
+        //     break;
+        // case cudarpc::QueryType::cudaStreamSynchronize:
+        //     cudaStreamSynchronizeService(); // 带一个参数
+        //     break;
+        // // case cudarpc::QueryType::cudaStreamIsCapturing:  // 编译不存在，等会应该要解决
+        // //     cudaStreamIsCapturingService(); // 忽略参数
+        // //     break;
+        // case cudarpc::QueryType::cudaMemcpyAsync: // 复制的size，以及复制的流，0是默认阻塞流，用户创建的是异步，允许并发
+        //     cudaMemcpyAsyncService();
+        //     break;
+        // case cudarpc::QueryType::cuBLAS_cublasCreate:
+        //     cublasCreateService();
+        //     break;    
         default:
             inValid++;
-            cublasSgemmService(cublasSgemmVector[0]);
+            cudaGetLastErrorService();
             break;
     }
 }
@@ -505,7 +511,7 @@ int main() {
     initForcublasSgemmStridedBatchedService();
 
     std::vector<int> commands;
-    std::ifstream commandFile("bert_cudaLog.txt");
+    std::ifstream commandFile("/root/zzx/GVirtuSPlus/Faaswap_2_GVirtus/cvCUDA/cv_cudaLog.txt");
     std::string line;
 
     if (commandFile.is_open()) {
@@ -575,9 +581,6 @@ int main() {
     std::cout << "=======================================================" << std::endl;
     }
     
-
-
-
     destoryinitGlobalVar();
     destoryDescriptor();
 

@@ -28,6 +28,13 @@
     } \
 }
 
+#define CHECK_CUBLAS(call) { \
+    cublasStatus_t status = call; \
+    if (status != CUBLAS_STATUS_SUCCESS) { \
+        std::cout << "CuBLAS error: " << __FILE__ << ":" << __LINE__ << ", " << "unknow status" << std::endl; \
+        exit(1); \
+    } \
+}
 //================================================
 // for parse param_type
 struct SgemmParam {
@@ -220,20 +227,24 @@ void destoryDescriptor(){
 
 // ===========================================================fv
 //
-void cublasSetStreamService() { cublasSetStream(cublas_handle_, 0);}
-void cublasSetMathModeService() { cublasSetMathMode(cublas_handle_, CUBLAS_DEFAULT_MATH );} // 已确认
+void cublasSetStreamService() { CHECK_CUBLAS(cublasSetStream(cublas_handle_, 0));}
+void cublasSetMathModeService() { CHECK_CUBLAS(cublasSetMathMode(cublas_handle_, CUBLAS_DEFAULT_MATH ));} // 已确认
 void cublasSgemmService(SgemmParam param) {
-    cublasSgemm(cublas_handle_,
-                CUBLAS_OP_N, CUBLAS_OP_N,
-                param.m, param.n, param.k,
-                &alpha, d_memory, param.lda, d_memory, param.ldb, &beta, d_memory, param.ldc);
+    // cublasSgemm(cublas_handle_,
+    //             CUBLAS_OP_N, CUBLAS_OP_N,
+    //             param.m, param.n, param.k,
+    //             &alpha, d_memory, param.lda, d_memory, param.ldb, &beta, d_memory, param.ldc);
 
-    // 1197  4000参数减到502 大减时间
+    // // 1197  4000参数减到502 大减时间
     // cublasSgemm(cublas_handle_,
     //     CUBLAS_OP_N, CUBLAS_OP_N,
     //     5000, 4000, 3000,
-    //     &alpha, d_memory, 5000, d_memory, 3000, &beta, d_memory, 5000);
-    // }
+    //     &alpha, d_memory, 5000, d_memory, 3000, &beta, d_memory, 5000);    
+
+    CHECK_CUBLAS(cublasSgemm(cublas_handle_,
+        CUBLAS_OP_N, CUBLAS_OP_N,
+        param.m, param.n, param.k,
+        &alpha, d_memory, param.m, d_memory, param.k, &beta, d_memory, param.m));    
 }
 
 void cublasSgemmStridedBatchedService(SgemmStridedBatchedParam param) {
@@ -247,7 +258,7 @@ void cublasSgemmStridedBatchedService(SgemmStridedBatchedParam param) {
     //                     cublasCarry, param.ldc,
     //                     param.batchCount);   
 
-    cublasSgemmStridedBatched(cublas_handle_,
+    CHECK_CUBLAS(cublasSgemmStridedBatched(cublas_handle_,
                                 CUBLAS_OP_N, CUBLAS_OP_N,                                
                                 param.m, param.n, param.k,
                                 &alpha,
@@ -258,9 +269,34 @@ void cublasSgemmStridedBatchedService(SgemmStridedBatchedParam param) {
                                 &beta,
                                 d_memory, param.ldc,
                                 param.strideC,
-                                param.batchCount);
+                                param.batchCount));
+
+    // int m = 5000;  // A 和 C 的行数
+    // int n = 4000;  // B 的列数和 C 的列数
+    // int k = 3000;  // A 的列数和 B 的行数
+    // int lda = 5000;  // A 的 leading dimension
+    // int ldb = 3000;  // B 的 leading dimension
+    // int ldc = 5000;  // C 的 leading dimension
+    // long long int strideA = 5000 * 3000;  // A 中两个矩阵之间的距离
+    // long long int strideB = 3000 * 4000;  // B 中两个矩阵之间的距离
+    // long long int strideC = 5000 * 4000;  // C 中两个矩阵之间的距离
+    // int batchCount = 16;  
+
+    // float alpha = 1.0f;
+    // float beta = 0.0f;
+
+    // cublasSgemmStridedBatched(cublas_handle_,
+    //                         CUBLAS_OP_N, CUBLAS_OP_N,
+    //                         m, n, k,
+    //                         &alpha,
+    //                         d_memory, lda, strideA,
+    //                         d_memory, ldb, strideB,
+    //                         &beta,
+    //                         d_memory, ldc, strideC,
+    //                         batchCount);
+
 }
-void cudaStreamSynchronizeService() { cudaStreamSynchronize(0);}
+void cudaStreamSynchronizeService() { CHECK_CUDA(cudaStreamSynchronize(0));}
 
 // void cudaStreamIsCapturingService() {
 //     cudaStreamCaptureStatus captureStatus;
@@ -278,16 +314,16 @@ void cudaMemcpyAsyncService() {
     }
 
     size_t count = copy_size * sizeof(float);  
-    cudaMemcpyAsync(d_output, h_src, count, cudaMemcpyHostToDevice, 0); // 最后是流
+    CHECK_CUDA(cudaMemcpyAsync(d_output, h_src, count, cudaMemcpyHostToDevice, 0)); // 最后是流
 }
 
 void cublasCreateService(){
-    cublasCreate(&cublas_handle_);
+    CHECK_CUBLAS(cublasCreate(&cublas_handle_));
 }
 
 // --------------------------------------------------------------
-void cudaGetLastErrorService() {cudaGetLastError();}  // need to add cudacheck
-void cudaDeviceSynchronizeService() {cudaDeviceSynchronize();}
+void cudaGetLastErrorService() {CHECK_CUDA(cudaGetLastError());}  // need to add cudacheck
+void cudaDeviceSynchronizeService() {CHECK_CUDA(cudaDeviceSynchronize());}
 void cudaMallocService() { CHECK_CUDA(cudaMalloc(&space1, 0));}
 // cudnn --------------------------
 void cudaLaunchKernelService() {
@@ -449,9 +485,9 @@ void parse(const cudarpc::QueryType &type) {
         case cudarpc::QueryType::cuBLAS_cublasSetStream:
             cublasSetStreamService(); // 带一个参数
             break;
-        case cudarpc::QueryType::cuBLAS_cublasSetMathMode: // 带一个参数
-            cublasSetMathModeService();
-            break;
+        // case cudarpc::QueryType::cuBLAS_cublasSetMathMode: // 带一个参数
+        //     cublasSetMathModeService();
+        //     break;
         case cudarpc::QueryType::cuBLAS_cublasSgemm: // 计算密集型
             // 从cublasSgemmVector中取出对应的参数（第cnt个）
             if (cublasSgemmCount < cublasSgemmVector.size()) {
@@ -462,15 +498,15 @@ void parse(const cudarpc::QueryType &type) {
             else 
                 std::cout << "cublasSgemmCount out of range" << std::endl;
             break;
-        case cudarpc::QueryType::cuBLAS_cublasSgemmStridedBatched: // 计算密集型
-            if (cublasSgemmStridedBatchedCount < cublasSSBVector.size()) {
-                SgemmStridedBatchedParam param = cublasSSBVector[cublasSgemmStridedBatchedCount];
-                cublasSgemmStridedBatchedCount++;
-                cublasSgemmStridedBatchedService(param);
-            }       
-            else 
-                std::cout << "cublasSgemmStridedBatchedCount out of range" << std::endl;
-            break;
+        // case cudarpc::QueryType::cuBLAS_cublasSgemmStridedBatched: // 计算密集型
+        //     if (cublasSgemmStridedBatchedCount < cublasSSBVector.size()) {
+        //         SgemmStridedBatchedParam param = cublasSSBVector[cublasSgemmStridedBatchedCount];
+        //         cublasSgemmStridedBatchedCount++;
+        //         cublasSgemmStridedBatchedService(param);
+        //     }       
+        //     else 
+        //         std::cout << "cublasSgemmStridedBatchedCount out of range" << std::endl;
+        //     break;
         case cudarpc::QueryType::cudaStreamSynchronize:
             cudaStreamSynchronizeService(); // 带一个参数
             break;
@@ -498,10 +534,10 @@ int main() {
 //    cudnnCreate(&handle);
     initGlobalVar();
     initDescriptor();
-    initForcublasSgemmStridedBatchedService();
+    // initForcublasSgemmStridedBatchedService();
 
     std::vector<int> commands;
-    std::ifstream commandFile("../bert_cudaLog.txt");
+    std::ifstream commandFile("/root/zzx/GVirtuSPlus/Faaswap_2_GVirtus/bertCUDA/bert_cudaLog.txt");
     std::string line;
 
     if (commandFile.is_open()) {
@@ -530,23 +566,36 @@ int main() {
     }
 
     int cnt = 0;
-    auto start = std::chrono::high_resolution_clock::now();
-
-    for (int command : commands) {
-        cudarpc::QueryType queryType = static_cast<cudarpc::QueryType>(command);
-    //    std::cout << cnt++ << " " << queryType << std::endl;
-        parse(queryType);
+    for (int i = 0; i < 5; i++) {
+        cublasSgemmStridedBatchedCount = 0;
+        cublasSgemmCount = 0;
+        for (int command : commands) {
+            cudarpc::QueryType queryType = static_cast<cudarpc::QueryType>(command);
+        //    std::cout << cnt++ << " " << queryType << std::endl;
+            parse(queryType);
+        }
     }
 
     cudaDeviceSynchronize();
-    
-    auto stop = std::chrono::high_resolution_clock::now();
 
-    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
+    
+    for (int i = 0; i < 10; i++) {
+        auto start = std::chrono::high_resolution_clock::now();
+        cublasSgemmStridedBatchedCount = 0;
+        cublasSgemmCount = 0;
+        for (int command : commands) {
+            cudarpc::QueryType queryType = static_cast<cudarpc::QueryType>(command);
+        //    std::cout << cnt++ << " " << queryType << std::endl;
+            parse(queryType);
+        }
+        cudaDeviceSynchronize();
+        auto stop = std::chrono::high_resolution_clock::now();
+            auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
     std::cout << "=======================================================" << std::endl;
-    std::cout << "Total commands: " << commands.size() << "  inValid: " << inValid << std::endl;
+    // std::cout << "Total commands: " << commands.size() << "  inValid: " << inValid << std::endl;
     std::cout << "Execution time: " << duration.count() << " ms" << std::endl;
     std::cout << "=======================================================" << std::endl;
+    }
 
     destoryinitGlobalVar();
     destoryDescriptor();
