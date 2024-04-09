@@ -31,6 +31,8 @@ __global__ void emptyKernel() {
     // do nothing
 }
 
+int cntAsyncMecopy = 0;
+
 cudnnHandle_t handle;
 
 // for forward
@@ -61,8 +63,8 @@ int n, c, h, w;
 int batch_size = 1, channels = 3, height = 1024, width = 1024;
 int out_channels = 16, kernel_height = 5, kernel_width = 5;
 
-const int dimA[3] = {1, 1, 1};
-const int strideA[3] = {3 * 2, 2, 1};
+const int dimA[4] = {1, 64, 56, 56};
+const int strideA[4] = {200704, 3136, 56, 1};
 
 float alpha = 1.0f, beta = 0.0f;
 size_t workspace_bytes = 0;
@@ -129,55 +131,46 @@ void destoryDescriptor(){
 
 // ===========================================================fv
 //
+void cudaStreamSynchronizeService() { CHECK_CUDA(cudaStreamSynchronize(0));}
 void cublasSetStreamService() { cublasSetStream(cublas_handle_, 0);}
-// void cublasSetMathModeService() { cublasSetMathMode(cublas_handle_, CUBLAS_TENSOR_OP_MATH);}
+void cublasSetMathModeService() { cublasSetMathMode(cublas_handle_, DEFAULT_MATH);}
 void cublasSgemmService() {
     cublasSgemm(cublas_handle_,
                 CUBLAS_OP_N, CUBLAS_OP_N,
-                5, 4, 3,
-                &alpha, A, 5, B, 3, &beta, C, 5);}
-void cublasSgemmStridedBatchedService() {
-    // int batchCount = 10;
-    // float A_batch[15 * batchCount], B_batch[12 * batchCount], C_batch[20 * batchCount]; // 假定这些矩阵已经初始化
+                1000, 1, 2048,
+                &alpha, d_memory, 1000, d_memory, 2048, &beta, d_memory, 1000);}
+void cudaMemcpyAsyncService() {
+    // from src --copy-> count bbyte to dst。
+    // cudaStream_t 类型的参数来指定操作关联的流
 
-    // cublasSgemmStridedBatched(cublas_handle_,
-    //                           CUBLAS_OP_N, CUBLAS_OP_N,
-    //                           5, 4, 3,
-    //                           &alpha,
-    //                           A_batch, 5, 15,
-    //                           B_batch, 3, 12,
-    //                           &beta,
-    //                           C_batch, 5, 20,
-    //                           10);
-    
-    float *A_batch[10], *B_batch[10], *C_batch[10];
-            
-    cublasSgemmBatched(cublas_handle_,
-                              CUBLAS_OP_N, CUBLAS_OP_N,
-                              5, 4, 3,
-                              &alpha,
-                              (const float * const *)A_batch, 5,
-                              (const float * const *)B_batch, 3,
-                              &beta,
-                              C_batch, 5,
-                              batchCount);                           
-}
+    float* h_src = new float[200528]; // host
+    if (cntAsyncMecopy == 0) {
+        CHECK_CUDA(cudaMemcpyAsync(d_output, h_src, 602112, cudaMemcpyHostToDevice, 0)); // 最后是流
+    }
+    if (cntAsyncMecopy == 1) {
+        CHECK_CUDA(cudaMemcpyAsync(d_output, h_src, 4000, cudaMemcpyHostToDevice, 0)); // 最后是流
+    }
+    if (cntAsyncMecopy == 2) { 
+        CHECK_CUDA(cudaMemcpyAsync(d_output, h_src, 4, cudaMemcpyHostToDevice, 0)); // 最后是流
+    }
+    cntAsyncMecopy = cntAsyncMecopy + 1;
+}                
 // --------------------------------------------------------------
 void cudaGetLastErrorService() {cudaGetLastError();}  // need to add cudacheck
 void cudaDeviceSynchronizeService() {cudaDeviceSynchronize();}
-void cudaMallocService() { CHECK_CUDA(cudaMalloc(&space1, 0));}
+void cudaMallocService() { CHECK_CUDA(cudaMalloc(&space1, 20971520));}
 // cudnn --------------------------
 void cudaLaunchKernelService() {
     dim3 blockDim(256);
     dim3 gridDim((1024 + blockDim.x - 1) / blockDim.x);
-    void *args[] = {};
-    cudaLaunchKernel((const void*)emptyKernel, gridDim, blockDim, args, 0, 0);
+    // void *args[] = {};
+    cudaLaunchKernel((const void*)emptyKernel, gridDim, blockDim, d_memory, 0, 0);
 }
 void cudnnCreateService() { CHECK_CUDNN(cudnnCreate(&handle));}
 void cudnnSetConvolutionGroupCountService() { CHECK_CUDNN(cudnnSetConvolutionGroupCount(tc1, 1));}
 void cudnnSetConvolutionMathTypeService() { CHECK_CUDNN(cudnnSetConvolutionMathType(tc1, CUDNN_TENSOR_OP_MATH)); }
 void cudnnSetFilterNdDescriptorService() { CHECK_CUDNN(cudnnSetFilterNdDescriptor(f1, CUDNN_DATA_FLOAT, CUDNN_TENSOR_NCHW, 3, dimA));}
-void cudnnSetTensorNdDescriptorService() { CHECK_CUDNN(cudnnSetTensorNdDescriptor(t1, CUDNN_DATA_FLOAT, 3, dimA, strideA));}
+void cudnnSetTensorNdDescriptorService() { CHECK_CUDNN(cudnnSetTensorNdDescriptor(t1, 0, 4, dimA, strideA));}
 void cudnnSetStreamService() { CHECK_CUDNN(cudnnSetStream(handle, 0));}
 void cudnnCreateTensorDescriptorService(){
     cudnnTensorDescriptor_t tempTensor;
@@ -258,18 +251,18 @@ void cudnnGetConvolutionForwardAlgorithm_v7Service() {
 int inValid = 0;
 void parse(const cudarpc::QueryType &type) {
     switch (type) {
-//        case cudarpc::QueryType::cudnnSetConvolutionNdDescriptor:
-//            cudnnSetConvolutionNdDescriptorService();
-//            break;
+       case cudarpc::QueryType::cudnnSetConvolutionNdDescriptor:
+           cudnnSetConvolutionNdDescriptorService();
+           break;
         case cudarpc::QueryType::cudnnCreate:
             cudnnCreateService();
             break;
-//        case cudarpc::QueryType::cudnnSetTensorNdDescriptor:
-//            cudnnSetTensorNdDescriptorService();
-//            break;
-//        case cudarpc::QueryType::cudnnSetFilterNdDescriptor:
-//            cudnnSetFilterNdDescriptorService();
-//            break;
+       case cudarpc::QueryType::cudnnSetTensorNdDescriptor:
+           cudnnSetTensorNdDescriptorService();
+           break;
+       case cudarpc::QueryType::cudnnSetFilterNdDescriptor:
+           cudnnSetFilterNdDescriptorService();
+           break;
         case cudarpc::QueryType::cudnnSetStream:
             cudnnSetStreamService();
             break;
@@ -297,9 +290,9 @@ void parse(const cudarpc::QueryType &type) {
         case cudarpc::QueryType::cudnnDestroyConvolutionDescriptor:
             cudnnDestroyConvolutionDescriptorService();
             break;
-//        case cudarpc::QueryType::cudnnBatchNormalizationForwardInference:
-//            cudnnBatchNormalizationForwardInferenceService();
-//            break;
+       case cudarpc::QueryType::cudnnBatchNormalizationForwardInference:
+           cudnnBatchNormalizationForwardInferenceService();
+           break;
         case cudarpc::QueryType::cudnnSetConvolutionMathType:
             cudnnSetConvolutionMathTypeService();
             break;
@@ -315,22 +308,25 @@ void parse(const cudarpc::QueryType &type) {
         case cudarpc::QueryType::cudaDeviceSynchronize:
             cudaDeviceSynchronizeService();
             break;
-//        case cudarpc::QueryType::cudaLaunchKernel:
-//            cudaLaunchKernelService();
-//            break;
+       case cudarpc::QueryType::cudaLaunchKernel:
+           cudaLaunchKernelService();
+           break;
 // =========================================================
-        // case cudarpc::QueryType::cuBLAS_cublasSetStream:
-        //     cublasSetStreamService();
-        //     break;
-        // case cudarpc::QueryType::cuBLAS_cublasSetMathMode:
-        //     cublasSetMathModeService();
-        //     break;
-        // case cudarpc::QueryType::cuBLAS_cublasSgemm:
-        //     cublasSgemmService();
-        //     break;
-        // case cudarpc::QueryType::cuBLAS_cublasSgemmStridedBatched:
-        //     cublasSgemmStridedBatchedService();
-        //     break;
+        case cudarpc::QueryType::cuBLAS_cublasSetStream:
+            cublasSetStreamService();
+            break;
+        case cudarpc::QueryType::cudaStreamSynchronize:
+            cudaStreamSynchronizeService(); // 带一个参数
+            break;
+        case cudarpc::QueryType::cuBLAS_cublasSetMathMode:
+            cublasSetMathModeService();
+            break;
+        case cudarpc::QueryType::cuBLAS_cublasSgemm:
+            cublasSgemmService();
+            break;
+        case cudarpc::QueryType::cudaMemcpyAsync: // 复制的size，以及复制的流，0是默认阻塞流，用户创建的是异步，允许并发
+            cudaMemcpyAsyncService();
+            break;
         default:
             inValid++;
             cudnnSetConvolutionMathTypeService();
@@ -339,11 +335,6 @@ void parse(const cudarpc::QueryType &type) {
 }
 // Execution time: 539.816 ms
 int main() {
-//    cudnnHandle_t cudnn_handle_;
-//    cudnnCreateFilterDescriptorService();
-//    cublasCreate(&cublas_handle_);
-//    cudnnCreate(&cudnn_handle_);
-//    cudnnCreate(&handle);
     initGlobalVar();
     initDescriptor();
 
@@ -380,29 +371,7 @@ int main() {
     std::cout << "Total commands: " << commands.size() << "  inValid: " << inValid << std::endl;
     std::cout << "Execution time: " << duration.count() << " ms" << std::endl;
     std::cout << "=======================================================" << std::endl;
-//    for (int i = 0; i < 10; ++i) {
-//        cudaMallocService();
-//        cudnnCreateService();
-//        cudnnSetStreamService();
-//        cudnnDestroyTensorDescriptorService();
-//        cudnnDestroyFilterDescriptorService();
-//        cudnnDestroyConvolutionDescriptorService();
-//        cudnnConvolutionForwardService();
-//        cudnnCreateTensorDescriptorService();
-//        cudnnCreateFilterDescriptorService();
-//        cudnnCreateConvolutionDescriptorService();
-//        cudnnGetConvolutionForwardAlgorithm_v7Service();
-//        cudaLaunchKernelService();
-////        cudnnBatchNormalizationForwardInferenceService();
-////        cudnnSetTensorNdDescriptorService();
-////        cudnnSetFilterNdDescriptorService();
-////        cudnnSetConvolutionNdDescriptorService();
-//        cudnnSetConvolutionMathTypeService();
-//        cudnnSetConvolutionGroupCountService();
-//
-//        cudaGetLastErrorService();
-//        cudaDeviceSynchronize();
-//    }
+
 
     destoryinitGlobalVar();
     destoryDescriptor();
